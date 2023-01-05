@@ -12,60 +12,30 @@ import gui_codebehind.GUI_Center;
 
 public class Main {
     public static void main(String[] args) {
-
-        bræt Bræt = new bræt();
-        Bræt.Board();
-        Scanner scan = new Scanner(System.in);
-        Terning terning1 = new Terning();
-        Terning terning2 = new Terning();
-        Terning terning3 = new Terning();
-        Terning terning4 = new Terning();
-        Player spiller1 = new Player();
-        Player spiller2 = new Player();
-        Player spiller3 = new Player();
-        Player spiller4 = new Player();
+        int playeramount;
         GUI gui = new GUI();
-        GUI_Player player1 = new GUI_Player("Spiller 1", 20);
-        GUI_Player player2 = new GUI_Player("Spiller 2", 20);
-        GUI_Player player3 = new GUI_Player("Spiller 3", 20);
-        GUI_Player player4 = new GUI_Player("Spiller 4", 20);
-
-        int Playerlocation1 = spiller1.SpillerLokation;
-        int Playerlocation2 = spiller2.SpillerLokation;
-        int Playerlocation3 = spiller3.SpillerLokation;
-        int Playerlocation4 = spiller4.SpillerLokation;
-        int PlayerBalance1 = player1.getBalance();
-        int PlayerBalance2 = player2.getBalance();
-        int PlayerBalance3 = player3.getBalance();
-        int PlayerBalance4 = player4.getBalance();
-
-
-
-
-
-
-
         String chosenButton = gui.getUserButtonPressed(
                 "Choose number of players",
                 "2 players", "3 players", "4 players"
         );
-
-        if (chosenButton == ("2 players")) {
-            gui.addPlayer(player1);
-            gui.addPlayer(player2);
+        if (chosenButton == ("2 players")){
+            playeramount = 2;
         }
-        if (chosenButton == ("3 players")) {
-            gui.addPlayer(player1);
-            gui.addPlayer(player2);
-            gui.addPlayer(player3);
+        else if (chosenButton == ("3 players")){
+            playeramount = 3;
         }
-        if (chosenButton == ("4 players")) {
-            gui.addPlayer(player1);
-            gui.addPlayer(player2);
-            gui.addPlayer(player3);
-            gui.addPlayer(player4);
+        else{
+            playeramount = 4;
         }
-        while ((player1.getBalance()) > 0) {
+        Player[] players = new Player[playeramount];
+        GUI_Player[] GUIplayers = new GUI_Player[playeramount];
+        for (int i = 0; i < playeramount; i++){
+            GUIplayers[i] = new GUI_Player("Spiller " + i, 20);
+            gui.addPlayer(GUIplayers[i]);
+        }
+        bræt Bræt = new bræt();
+        Bræt.Board();
+        /*while ((player1.getBalance()) > 0) {
 
             String chosen1Button = gui.getUserButtonPressed(
                     "Roll a dice",
@@ -139,6 +109,7 @@ public class Main {
 
 
         }
+        */
 
     }
 }

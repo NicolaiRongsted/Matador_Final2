@@ -1,27 +1,18 @@
 package org.example;
 
 public class Player {
-    public int NuvaerendeVaerdi;
-    public int setNuvaerendeVaerdi;
-
-    public int SpillerLokation;
-    public int setSpillerLokation;
+    private int balance;
+    private int SpillerLokation;
     public Player(){
-        NuvaerendeVaerdi = 20;
+        balance = 20;
     }
-
-    public int getNuvaerendeVaerdi() {
-        return NuvaerendeVaerdi;
+    public int getbalance() {
+        return balance;
     }
-
-    public int setNuvaerendeVaerdi() {
-        setNuvaerendeVaerdi = NuvaerendeVaerdi;
-        return setNuvaerendeVaerdi;
+    public void setbalance(int balance) {
+        this.balance = balance;
     }
-    public int setSpillerLokation() {
-        setSpillerLokation = SpillerLokation;
-        return setSpillerLokation;
+    public void setlocation(int location) {
+        this.SpillerLokation = location;
     }
-
-
 }
