@@ -5,15 +5,15 @@ public class GameController {
     public void play(){
         game.GUIstartup();
         CreatePlayers();
-        game.Updateposition(2);
+        new bræt();
+
     }
     private void CreatePlayers(){
         game.GUIPlayerstart();
-        Player[] players;
     }
-    private void PlayRound(){
-    }
+    private void PlayRound(){}
 
     private void Movetofield(){}
+
 
 }

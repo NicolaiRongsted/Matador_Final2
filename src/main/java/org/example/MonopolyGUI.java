@@ -2,13 +2,14 @@ package org.example;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
+
 import java.io.*;
 
 public class MonopolyGUI {
+
     public static GUI gui = new GUI();
     static GUI_Player[] player = new GUI_Player[4];
     GUI_Field start = gui.getFields()[0];
-
     public GUI GUIstartup(){
         return gui;
     }
@@ -22,6 +23,7 @@ public class MonopolyGUI {
             gui.addPlayer(player[i - 1]);
             player[i - 1].getCar().setPosition(start);
         }
+
     }
 
     public void Updatebalance(int leje, int id){ // Updatebalance, fungerer på den måde at man sætter to parameter den skal bruge. en leje og id på personen, som er player: 0, 1, 2 ,
@@ -29,16 +31,12 @@ public class MonopolyGUI {
         player[id].setBalance(player[id].getBalance()+leje); // balance er i forvejen, og ligger lejen til eller trækker fra, alt afhængig af om det leje man skal betale eller få
     }
 
-    public void Updateposition(int id){ //Opdater positionen på gui
-        //players[id].setPosition(4);
-        //System.out.println(players[id].getPosition());
-    }
-
-
-
-    public void Showmessage(){
+    public void Updateposition(int ID){ //Opdater positionen på gui
 
     }
+
+
+
 
 
     public boolean Yes_or_no(String message){
