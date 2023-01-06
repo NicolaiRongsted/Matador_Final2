@@ -5,13 +5,15 @@ import gui_main.GUI;
 import java.io.*;
 
 public class MonopolyGUI {
-    private GUI gui = new GUI();
+    public static GUI gui = new GUI();
     static GUI_Player[] player = new GUI_Player[4];
     GUI_Field start = gui.getFields()[0];
+
     public GUI GUIstartup(){
         return gui;
     }
     public void GUIPlayerstart(){
+        bræt.Board();
         String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
         int playeramount = Integer.parseInt(playeramountstring);
         for (int i = 1; i < playeramount + 1; i++){
@@ -27,12 +29,16 @@ public class MonopolyGUI {
         player[id].setBalance(player[id].getBalance()+leje); // balance er i forvejen, og ligger lejen til eller trækker fra, alt afhængig af om det leje man skal betale eller få
     }
 
-    public void Updateposition(int ID){ //Opdater positionen på gui
-
+    public void Updateposition(int id){ //Opdater positionen på gui
+        //players[id].setPosition(4);
+        //System.out.println(players[id].getPosition());
     }
 
 
 
+    public void Showmessage(){
+
+    }
 
 
     public boolean Yes_or_no(String message){
