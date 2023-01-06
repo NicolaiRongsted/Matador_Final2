@@ -1,7 +1,10 @@
 package org.example;
 
 public class GameController {
-    public void play(){}
+    MonopolyGUI game = new MonopolyGUI();
+    public void play(){
+        game.GUIstartup();
+    }
 
     private void start(){}
 
