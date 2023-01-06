@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="GameController start og Gui tests">
+    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Updatebalance er lavet og med en forklaring på hvordan den er lavet og fungere">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-01-2023_10_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-01-2023_10_33__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Rewrite" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,8 +75,6 @@
       <option name="presentableId" value="Default" />
       <updated>1672916967571</updated>
       <workItem from="1672916968203" duration="938000" />
-      <workItem from="1672997412965" duration="2191000" />
-      <workItem from="1672999613584" duration="2134000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -90,14 +90,7 @@
       <option name="project" value="LOCAL" />
       <updated>1672917420839</updated>
     </task>
-    <task id="LOCAL-00003" summary="GameController start og Gui tests">
-      <created>1672992019686</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1672992019686</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +123,6 @@
     <MESSAGE value="Først commit for deling" />
     <MESSAGE value="Andet commit for deling" />
     <MESSAGE value="Player opdateret" />
-    <MESSAGE value="GameController start og Gui tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="GameController start og Gui tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player opdateret" />
   </component>
 </project>

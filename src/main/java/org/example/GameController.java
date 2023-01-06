@@ -5,6 +5,7 @@ public class GameController {
     public void play(){
         game.GUIstartup();
         CreatePlayers();
+        new bræt();
 
     }
     private void CreatePlayers(){
