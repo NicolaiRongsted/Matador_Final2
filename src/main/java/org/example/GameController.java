@@ -4,12 +4,11 @@ public class GameController {
     MonopolyGUI game = new MonopolyGUI();
     public void play(){
         game.GUIstartup();
+        CreatePlayers();
     }
-
-    private void start(){}
-
-    private void CreatePlayers(){}
-
+    private void CreatePlayers(){
+        game.GUIPlayerstart();
+    }
     private void playRound(){}
 
     private void Movetofield(){}
