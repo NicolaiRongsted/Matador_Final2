@@ -1,7 +1,10 @@
 package org.example;
 
 public class Player {
-    private int position = 0;
+    private int position;
+    public Player(int position){
+        this.position = position;
+    }
     public void setPosition(int terningkast){
         position =+ terningkast;
     }

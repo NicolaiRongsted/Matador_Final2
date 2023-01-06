@@ -2,6 +2,7 @@ package org.example;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
+import java.io.*;
 
 public class MonopolyGUI {
     Terning terning1 = new Terning();
@@ -33,17 +34,17 @@ public class MonopolyGUI {
 
     }
 
-    public void showMessage(String msg){
+    public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
         gui.showMessage(msg);
 
     }
 
-    public void roll(){
+    public void roll(){ //Ud af MonopolyGUI og ind i GameController
         terning1.roll();
         terning2.roll();
     }
 
-    public void getFace(){
+    public void getFace(){ //skal hedde noget andet end getFace da det ikke er det den gør.
         gui.setDice(terning1.getFaceValue(), terning2.getFaceValue());
 
     }
