@@ -6,13 +6,14 @@ import gui_main.GUI;
 public class MonopolyGUI {
     Terning terning1 = new Terning();
     Terning terning2 = new Terning();
-    private GUI gui = new GUI();
+    public static GUI gui = new GUI();
     static GUI_Player[] player = new GUI_Player[4];
     GUI_Field start = gui.getFields()[0];
     public GUI GUIstartup(){
         return gui;
     }
     public void GUIPlayerstart(){
+        bræt.Board();
         String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
         int playeramount = Integer.parseInt(playeramountstring);
         for (int i = 1; i < playeramount + 1; i++){
