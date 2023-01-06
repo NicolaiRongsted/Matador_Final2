@@ -167,6 +167,10 @@ public class bræt {
         field = fields[39];
         field.setSubText(" Pris: 8000");
 
+        //Enten skal vi have en lokal indstans af prisen eller fjerne at der står "Pris:" på grunde hvor man kan købe.
+        //Istedet for at have alle de her ting om og om igen, er det en bedre ide at have en array af fields som repræsenterer en værdi.
+        //
+
 
         /*
         field = fields[9];
