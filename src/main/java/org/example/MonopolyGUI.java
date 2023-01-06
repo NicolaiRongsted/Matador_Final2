@@ -22,13 +22,16 @@ public class MonopolyGUI {
         }
     }
 
-    public void Updatebalance(){
+    public void Updatebalance(){ //Opdater penge på gui
 
     }
 
-    public void Updateposition(int ID){
+    public void Updateposition(int ID){ //Opdater positionen på gui
 
     }
+
+
+
 
 
     public boolean Yes_or_no(String message){

@@ -8,5 +8,6 @@ import java.awt.*;
 public class bræt {
 
         public void Board () {
+
         }
     }

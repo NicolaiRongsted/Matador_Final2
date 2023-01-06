@@ -9,7 +9,7 @@ public class GameController {
     private void CreatePlayers(){
         game.GUIPlayerstart();
     }
-    private void playRound(){}
+    private void PlayRound(){}
 
     private void Movetofield(){}
 
