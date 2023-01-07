@@ -5,11 +5,13 @@ import gui_main.GUI;
 public class GameController {
     MonopolyGUI game = new MonopolyGUI();
     boolean playing = true;
+    Terning terning = new Terning();
 
     public void play(){
         game.GUIstartup();
         CreatePlayers();
     }
+
     private void CreatePlayers(){
         game.GUIPlayerstart();
     }
@@ -31,9 +33,9 @@ public class GameController {
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             game.getFace();
             //Skal rykke på spilleren?
-
+            game.Updateposition(id, game.terning1.getFaceValue() + game.terning2.getFaceValue());
             //Over start modtage penge opdatere balance
-
+            game.Updatebalance(+4000, id);
             //Indkomstskat betale bede spiller om at vælge betale 10% eller 200 og opdatere balance
 
             //Hvis fængsel låse spiller indtil ude
@@ -50,6 +52,8 @@ public class GameController {
 
             //
         }
+
+        game.Updateposition(3,8);
 
     }
 
