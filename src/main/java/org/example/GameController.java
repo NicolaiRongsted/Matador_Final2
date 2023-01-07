@@ -22,15 +22,15 @@ public class GameController {
         while (playing) {
             //skal bestemme hvilken spillers tur det er
 
-            //Tjekke om spiller er i fængsel
+            //Tjekke om spiller er i fængsel (bedre at gøre der hvor man ruller og hvis man skal rykke)
 
-            //Hvis spiller er i fængsel Slå 2 ens eller betale og miste tur
+            //Hvis spiller er i fængsel Slå 2 ens eller betale og miste tur(Igen bedre i der hvor man opdaterer positionen eller i en seperat funktion, men ikke her.)
 
             //skal bede en spiller om at slå
             game.showMessage("Slå med terningerne");
             //skal slå med terninger
             game.roll();
-            //skal vise hvad man slog
+            //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             game.getFace();
             //Skal rykke på spilleren?
 

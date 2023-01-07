@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="tilføjet kommentare og opdateret Updateposition">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Fikset updateposition igen, det hele burde virke nu.">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +99,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673043420598</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fikset updateposition igen, det hele burde virke nu.">
+      <created>1673090904990</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673090904990</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fikset updateposition igen, det hele burde virke nu.">
+      <created>1673090916978</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673090916978</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +148,7 @@
     <MESSAGE value="Player opdateret" />
     <MESSAGE value="GameController start og Gui tests" />
     <MESSAGE value="tilføjet kommentare og opdateret Updateposition" />
-    <option name="LAST_COMMIT_MESSAGE" value="tilføjet kommentare og opdateret Updateposition" />
+    <MESSAGE value="Fikset updateposition igen, det hele burde virke nu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikset updateposition igen, det hele burde virke nu." />
   </component>
 </project>
