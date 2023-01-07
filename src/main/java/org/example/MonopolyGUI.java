@@ -21,7 +21,7 @@ public class MonopolyGUI {
         int playeramount = Integer.parseInt(playeramountstring);
         players = new Player[playeramount];
         for (int i = 0; i < playeramount; i++){
-            String playername = gui.getUserString("Whats the name of player " + i+1 + "?");
+            String playername = gui.getUserString("Whats the name of player " + (i+1) + "?");
             players[i] = new Player(0);
             player[i] = new GUI_Player(playername, 30000);
             gui.addPlayer(player[i]);
