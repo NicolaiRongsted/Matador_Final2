@@ -15,6 +15,7 @@ public class MonopolyGUI {
         return gui;
     }
     public void GUIPlayerstart(){
+
         bræt.Board();
         String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
         int playeramount = Integer.parseInt(playeramountstring);
