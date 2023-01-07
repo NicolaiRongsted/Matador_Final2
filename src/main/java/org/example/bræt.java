@@ -5,6 +5,22 @@ import gui_main.GUI;
 public class bræt {
 
     public static void Board () {
+
+        String[] Pris = {"1200", "1200", "10% el. 4000", "4000", "2000", "2000", "2400", "2800", "3000", "2800", "3200","4000",
+                         "3600", "3600", "4000", "4400", "4400", "4800", "4000", "5200", "5200", "3000", "5600", "6000",
+                         "6000", "6400","4000", "7000", "2000", "8000"};
+        for (String i: Pris){
+            System.out.println(i);
+        }
+
+        int[] felt = {1,3,4,5,6,8,9,11,12,13,14,15,16,18,19,21,23,24,25,26,27,28,29,31,32,34,35,37,38,39};
+        for (int i: felt) {
+            System.out.println(i);
+        }
+
+
+
+        /*
         // START FELT
         GUI_Field[] fields = MonopolyGUI.gui.getFields();
         GUI_Field field = fields[0];
@@ -166,7 +182,7 @@ public class bræt {
         //Felt 39 Rådhuspladsen
         field = fields[39];
         field.setSubText(" Pris: 8000");
-
+        */
         //Enten skal vi have en lokal indstans af prisen eller fjerne at der står "Pris:" på grunde hvor man kan købe.
         //Istedet for at have alle de her ting om og om igen, er det en bedre ide at have en array af fields som repræsenterer en værdi.
         //
