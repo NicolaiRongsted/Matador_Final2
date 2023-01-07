@@ -1,17 +1,22 @@
 package org.example;
-
+import java.io.*;
 import gui_main.GUI;
 
 public class GameController {
     MonopolyGUI game = new MonopolyGUI();
     boolean playing = true;
-
+    Felter[] felter = new Felter[40];
     public void play(){
         game.GUIstartup();
-        CreatePlayers();
+        Start();
+        for (int i = 0; i < 5; i++){
+            String[] test = bræt.getPris();
+            System.out.println(test[i]); //virker
+        }
     }
-    private void CreatePlayers(){
+    private void Start(){
         game.GUIPlayerstart();
+        //InitializeFields();
     }
 
 
@@ -58,7 +63,9 @@ public class GameController {
     }
 
     private void Landonfield(int PlayerID, int position){
-
-        MonopolyGUI.players[PlayerID] =
     }
+
+    private void InitializeFields(){
+    }
+
 }

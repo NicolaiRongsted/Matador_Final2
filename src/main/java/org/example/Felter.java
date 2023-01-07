@@ -5,15 +5,11 @@ import static org.example.MonopolyGUI.gui;
 public class Felter {
     private int position;
     private int leje;
-    private String navn;
+    private int kost;
     private Player ejer;
-    public void Felter(int position, int leje, String navn){
+    public Felter(int position, int leje, int kost){
         this.position = position;
         this.leje = leje;
-        this.navn = navn;
         this.ejer = null;
     }
-
-
-
 }
