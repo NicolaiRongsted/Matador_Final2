@@ -1,22 +1,19 @@
 package org.example;
-import java.io.*;
+
 import gui_main.GUI;
 
 public class GameController {
     MonopolyGUI game = new MonopolyGUI();
     boolean playing = true;
-    Felter[] felter = new Felter[40];
+    Terning terning = new Terning();
+
     public void play(){
         game.GUIstartup();
-        Start();
-        for (int i = 0; i < 5; i++){
-            String[] test = bræt.getPris();
-            System.out.println(test[i]); //virker
-        }
+        CreatePlayers();
     }
-    private void Start(){
+
+    private void CreatePlayers(){
         game.GUIPlayerstart();
-        //InitializeFields();
     }
 
 
@@ -36,9 +33,9 @@ public class GameController {
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             game.getFace();
             //Skal rykke på spilleren?
-
+            game.Updateposition(id, game.terning1.getFaceValue() + game.terning2.getFaceValue());
             //Over start modtage penge opdatere balance
-
+            game.Updatebalance(+4000, id);
             //Indkomstskat betale bede spiller om at vælge betale 10% eller 200 og opdatere balance
 
             //Hvis fængsel låse spiller indtil ude
@@ -56,6 +53,8 @@ public class GameController {
             //
         }
 
+        game.Updateposition(3,8);
+
     }
 
     private void Movetofield(){
@@ -63,9 +62,7 @@ public class GameController {
     }
 
     private void Landonfield(int PlayerID, int position){
-    }
 
-    private void InitializeFields(){
+        MonopolyGUI.players[PlayerID] =
     }
-
 }

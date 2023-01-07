@@ -10,8 +10,8 @@ public class MonopolyGUI {
     public static GUI gui = new GUI();
     static GUI_Player[] player = new GUI_Player[4];
     GUI_Field start = gui.getFields()[0];
-    public static Player[] players;
-    public static GUI GUIstartup(){
+    private Player[] players;
+    public GUI GUIstartup(){
         return gui;
     }
     public void GUIPlayerstart(){
@@ -21,7 +21,7 @@ public class MonopolyGUI {
         int playeramount = Integer.parseInt(playeramountstring);
         players = new Player[playeramount];
         for (int i = 0; i < playeramount; i++){
-            String playername = gui.getUserString("Whats the name of player " + (i+1) + "?");
+            String playername = gui.getUserString("Whats the name of player " + i + "?");
             players[i] = new Player(0);
             player[i] = new GUI_Player(playername, 30000);
             gui.addPlayer(player[i]);
@@ -39,10 +39,7 @@ public class MonopolyGUI {
         GUI_Field field = gui.getFields()[players[ID].getPosition()];
         player[ID].getCar().setPosition(field);
     }
-    public void Setposition(int ID, int position){
-        GUI_Field field = gui.getFields()[position];
-        player[ID].getCar().setPosition(field);
-    }
+
     public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
         gui.showMessage(msg);
     }
@@ -58,16 +55,10 @@ public class MonopolyGUI {
 
 
 
-
     public boolean Yes_or_no(String message){
         String yes = "Yes";
         String no = "No";
         String input = gui.getUserSelection(message, yes, no);
         return input.equals(yes);
-    }
-
-    public void displayChanceCard(String chancekort){
-        gui.displayChanceCard(chancekort);
-
     }
 }
