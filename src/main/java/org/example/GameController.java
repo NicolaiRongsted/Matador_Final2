@@ -10,8 +10,7 @@ public class GameController {
     public void play(){
         game.GUIstartup();
         CreatePlayers();
-        PlayRound();
-
+        game.Updateposition(0, 6);
     }
     private void CreatePlayers(){
         game.GUIPlayerstart();
