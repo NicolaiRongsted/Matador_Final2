@@ -1,16 +1,14 @@
 package org.example;
 
+import gui_main.GUI;
+
 public class GameController {
-
-
     MonopolyGUI game = new MonopolyGUI();
-    SpecialFelter chancekort = new SpecialFelter();
     boolean playing = true;
 
     public void play(){
         game.GUIstartup();
         CreatePlayers();
-        PlayRound();
     }
     private void CreatePlayers(){
         game.GUIPlayerstart();
@@ -20,8 +18,6 @@ public class GameController {
     private void PlayRound(){
 
         while (playing) {
-
-
             //skal bestemme hvilken spillers tur det er
 
             //Tjekke om spiller er i fængsel (bedre at gøre der hvor man ruller og hvis man skal rykke)
@@ -34,15 +30,6 @@ public class GameController {
             game.roll();
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             game.getFace();
-
-
-            //handleGui(feltLandedOn); Håndter GUI, så hvis feltLandedOn = 4,
-            //handleCardLogic(feltLandedOn, Player()); her skal specifik spiller indsættes
-
-
-
-
-
             //Skal rykke på spilleren?
 
             //Over start modtage penge opdatere balance
@@ -66,21 +53,12 @@ public class GameController {
 
     }
 
+    private void Movetofield(){
 
-    private void handleChanceKort(int cardNumber, int player, int cardValue, int cardPostion) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
-        switch (cardNumber){
-            case 1 -> {
-                game.Setposition(player,chancekort.getCardPositon(cardNumber)); //chancekort der ændrer position
-            }
-
-            case 2 -> {
-                game.Updatebalance(player,chancekort.getCardValue(cardNumber)); //chancekort der ændrer balance
-            }
-
-
-        }
     }
 
+    private void Landonfield(int PlayerID, int position){
 
-
+        MonopolyGUI.players[PlayerID] =
+    }
 }
