@@ -61,4 +61,9 @@ public class MonopolyGUI {
         String input = gui.getUserSelection(message, yes, no);
         return input.equals(yes);
     }
+
+    public void displayChanceCard(String chancekort){
+        gui.displayChanceCard(chancekort);
+
+    }
 }
