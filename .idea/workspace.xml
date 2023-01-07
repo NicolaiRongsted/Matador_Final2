@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Priserne på felterne/veje har fået de korrekte priser&#10;-Peter">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Lavet Arrays af Priser og felter&#10;Virker ikke til GUI endnu&#10;Men koden virker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" afterDir="false" />
     </list>
