@@ -10,6 +10,7 @@ public class MonopolyGUI {
     public static GUI gui = new GUI();
     static GUI_Player[] player = new GUI_Player[4];
     GUI_Field start = gui.getFields()[0];
+    private Player[] players;
     public GUI GUIstartup(){
         return gui;
     }
@@ -17,11 +18,13 @@ public class MonopolyGUI {
         bræt.Board();
         String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
         int playeramount = Integer.parseInt(playeramountstring);
-        for (int i = 1; i < playeramount + 1; i++){
+        players = new Player[playeramount];
+        for (int i = 0; i < playeramount; i++){
             String playername = gui.getUserString("Whats the name of player " + i + "?");
-            player[i - 1] = new GUI_Player(playername, 30000);
-            gui.addPlayer(player[i - 1]);
-            player[i - 1].getCar().setPosition(start);
+            players[i] = new Player(0);
+            player[i] = new GUI_Player(playername, 30000);
+            gui.addPlayer(player[i]);
+            player[i].getCar().setPosition(start);
         }
     }
 
@@ -30,13 +33,14 @@ public class MonopolyGUI {
         player[id].setBalance(player[id].getBalance()+leje); // balance er i forvejen, og ligger lejen til eller trækker fra, alt afhængig af om det leje man skal betale eller få
     }
 
-    public void Updateposition(int ID){ //Opdater positionen på gui
-
+    public void Updateposition(int ID, int terningkast){ //Opdater positionen på gui
+        players[ID].setPosition(players[ID].getPosition() + terningkast);
+        GUI_Field field = gui.getFields()[players[ID].getPosition()];
+        player[ID].getCar().setPosition(field);
     }
 
     public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
         gui.showMessage(msg);
-
     }
 
     public void roll(){ //Ud af MonopolyGUI og ind i GameController
@@ -46,7 +50,6 @@ public class MonopolyGUI {
 
     public void getFace(){ //skal hedde noget andet end getFace da det ikke er det den gør.
         gui.setDice(terning1.getFaceValue(), terning2.getFaceValue());
-
     }
 
 
