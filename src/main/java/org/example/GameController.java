@@ -4,13 +4,11 @@ import gui_main.GUI;
 
 public class GameController {
     MonopolyGUI game = new MonopolyGUI();
-
     boolean playing = true;
 
     public void play(){
         game.GUIstartup();
         CreatePlayers();
-        game.Updateposition(0, 6);
     }
     private void CreatePlayers(){
         game.GUIPlayerstart();
@@ -55,7 +53,12 @@ public class GameController {
 
     }
 
-    private void Movetofield(){}
+    private void Movetofield(){
 
+    }
 
+    private void Landonfield(int PlayerID, int position){
+
+        MonopolyGUI.players[PlayerID] =
+    }
 }
