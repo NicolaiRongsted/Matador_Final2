@@ -5,8 +5,6 @@ import gui_main.GUI;
 import java.io.*;
 
 public class MonopolyGUI {
-    Terning terning1 = new Terning();
-    Terning terning2 = new Terning();
     public static GUI gui = new GUI();
     static GUI_Player[] player = new GUI_Player[4];
     GUI_Field start = gui.getFields()[0];
@@ -21,8 +19,8 @@ public class MonopolyGUI {
         int playeramount = Integer.parseInt(playeramountstring);
         players = new Player[playeramount];
         for (int i = 0; i < playeramount; i++){
-            String playername = gui.getUserString("Whats the name of player " + i + "?");
-            players[i] = new Player(0);
+            String playername = gui.getUserString("Whats the name of player " + (i + 1) + "?");
+            players[i] = new Player(0, playername);
             player[i] = new GUI_Player(playername, 30000);
             gui.addPlayer(player[i]);
             player[i].getCar().setPosition(start);
@@ -44,15 +42,12 @@ public class MonopolyGUI {
         gui.showMessage(msg);
     }
 
-    public void roll(){ //Ud af MonopolyGUI og ind i GameController
-        terning1.roll();
-        terning2.roll();
+    public void showDice(int dice1, int dice2){ //skal hedde noget andet end getFace da det ikke er det den gør.
+        gui.setDice(dice1, dice2);
     }
-
-    public void getFace(){ //skal hedde noget andet end getFace da det ikke er det den gør.
-        gui.setDice(terning1.getFaceValue(), terning2.getFaceValue());
+    public String getName(int id){
+        return players[id].getName();
     }
-
 
 
     public boolean Yes_or_no(String message){
