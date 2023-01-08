@@ -12,11 +12,12 @@ public class MonopolyGUI {
     public GUI GUIstartup(){
         return gui;
     }
+    public static int playeramount;
     public void GUIPlayerstart(){
 
         bræt.Board();
         String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
-        int playeramount = Integer.parseInt(playeramountstring);
+        playeramount = Integer.parseInt(playeramountstring);
         players = new Player[playeramount];
         for (int i = 0; i < playeramount; i++){
             String playername = gui.getUserString("Whats the name of player " + (i + 1) + "?");
@@ -34,6 +35,9 @@ public class MonopolyGUI {
 
     public void Updateposition(int ID, int terningkast){ //Opdater positionen på gui
         players[ID].setPosition(players[ID].getPosition() + terningkast);
+        if (players[ID].getPosition() >= 40){
+            players[ID].setPosition(players[ID].getPosition() % 40);
+        }
         GUI_Field field = gui.getFields()[players[ID].getPosition()];
         player[ID].getCar().setPosition(field);
     }
