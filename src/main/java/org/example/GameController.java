@@ -47,8 +47,8 @@ public class GameController {
             //Udføre chancekort
             //skal gå videre til næste spiller
             game.showMessage("Næste spillers tur");
-            //
-            Player += 1;
+            //Skifter spiller, modulus er antallet af spillere der er valgt
+            Player = (Player + 1) % game.playeramount;
         }
     }
     private void Movetofield(){
