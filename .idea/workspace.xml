@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Fikset småting i koden, tilføjet spiller navne, fikset problem med array overflow i PlayRound(), lavet Updatebalance til kommentar.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Gamestate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GamestateLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gamestates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gamestates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" afterDir="false" />
