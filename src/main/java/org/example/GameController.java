@@ -1,6 +1,10 @@
 package org.example;
 
+import gui_fields.GUI_Field;
+import gui_fields.GUI_Ownable;
 import gui_main.GUI;
+
+import static org.example.MonopolyGUI.gui;
 
 public class GameController {
     SpecialFelter chancekort = new SpecialFelter();
@@ -11,6 +15,7 @@ public class GameController {
     private int roll1;
     private int roll2;
     public void play(){
+        //game.CustomGamestate();
         game.GUIstartup();
         CreatePlayers();
         PlayRound();
@@ -36,6 +41,7 @@ public class GameController {
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             //Skal rykke på spilleren?
             game.Updateposition(Player, roll());
+            Landonfield(Player, MonopolyGUI.players[Player].getPosition());
             //Over start modtage penge opdatere balance
 
             //game.Updatebalance(+4000, Player);
@@ -57,6 +63,47 @@ public class GameController {
     }
     private void Landonfield(int PlayerID, int position){
 
+        if (position == 30){
+            MonopolyGUI.players[PlayerID].setJailed();
+            game.Setposition(PlayerID, 10);
+            System.out.println("Spilleren landte paa faengsel");
+        }
+        else if (position == 4 || position == 38){
+            game.Updatebalance(-2000, PlayerID);
+            System.out.println("Spilleren landte paa skatte ting");;
+        }
+        else if (position == 2 || position == 7 || position == 17 || position == 22 || position == 33 || position == 36){
+            //Traek chancekort
+            System.out.println("Spilleren landte paa chancekort");
+        }
+        else if(position == 10 || position == 20 || position == 0 || position == 40){
+            game.showMessage("Du landte p[ et feldt hvor der ikke sker noget!");
+        }
+        else {
+            System.out.println("Spilleren landte paa en grund");
+            GUI_Field field = gui.getFields()[position];
+            GUI_Ownable ownable = (GUI_Ownable) field;
+            if (ownable.getOwnerName() == null){
+                boolean buy = game.Yes_or_no("Vil du gerne købe feltet");
+                if(buy){
+                    //Vil gerne koebe
+                    int pris = Integer.parseInt(field.getSubText());
+                    game.Updatebalance(-pris, PlayerID);
+                    ownable.setOwnerName(game.getName(PlayerID));
+
+                }
+                else {
+                    //Vil ikke koebe
+                }
+            }
+            else{
+                if(ownable.getOwnerName() != game.getName(PlayerID)){
+                    game.showMessage("Det er spilleren " + ownable.getOwnerName() + " Der ejer grunden, du skal derfor betale " + ownable.getRent());
+                    game.Updatebalance(Integer.parseInt(ownable.getRent()), PlayerID);
+                }
+                //betal leje til spilleren der ejer grunden.
+            }
+        }
     }
     public int roll(){ //Ud af MonopolyGUI og ind i GameController
         roll1 = terning1.roll();
@@ -70,14 +117,9 @@ public class GameController {
             case 1 -> {
                 game.Setposition(player,chancekort.getCardPositon(cardNumber)); //chancekort der ændrer position
             }
-
             case 2 -> {
                 game.Updatebalance(player,chancekort.getCardValue(cardNumber)); //chancekort der ændrer balance
             }
-
-
         }
     }
-
-
 }
