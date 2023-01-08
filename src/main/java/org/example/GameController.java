@@ -15,7 +15,6 @@ public class GameController {
     private int roll1;
     private int roll2;
     public void play(){
-        //game.CustomGamestate();
         game.GUIstartup();
         CreatePlayers();
         PlayRound();
@@ -29,10 +28,10 @@ public class GameController {
     private void PlayRound(){
         int Player = 0;
         while (playing) {
-            //skal bestemme hvilken spillers tur det er
-            if (Player > 3){
+            if (Player > 3) { // Bestemmer hvilken spillers tur det er.
                 Player = 0;
             }
+            game.showMessage("Det er Spilleren " + game.getName(Player) + "'s tur");
             //Tjekke om spiller er i fængsel (bedre at gøre der hvor man ruller og hvis man skal rykke)
             //Hvis spiller er i fængsel Slå 2 ens eller betale og miste tur(Igen bedre i der hvor man opdaterer positionen eller i en seperat funktion, men ikke her.)
             //skal bede en spiller om at slå
@@ -43,6 +42,21 @@ public class GameController {
             game.Updateposition(Player, roll());
             Landonfield(Player, MonopolyGUI.players[Player].getPosition());
             //Over start modtage penge opdatere balance
+
+            int i = 0; // Tæller til at der kun er 2 ekstra slag
+            while (roll1 == roll2) {
+                if (i == 2) {
+                    //game.Updateposition();
+                    break;
+                }
+                game.showMessage("Der er blevet to ens, slå igen");
+                game.Updateposition(Player, roll());
+                if (roll1 != roll2) {
+                    break;
+                }
+                i++;
+            }
+
 
             //game.Updatebalance(+4000, Player);
 
@@ -58,7 +72,8 @@ public class GameController {
             Player = (Player + 1) % game.playeramount;
         }
     }
-    private void Movetofield(){
+
+    private void Movetofield() {
 
     }
     private void Landonfield(int PlayerID, int position){
@@ -105,7 +120,8 @@ public class GameController {
             }
         }
     }
-    public int roll(){ //Ud af MonopolyGUI og ind i GameController
+
+    public int roll() { //Ud af MonopolyGUI og ind i GameController
         roll1 = terning1.roll();
         roll2 = terning2.roll();
         int rolltot = roll1 + roll2;
