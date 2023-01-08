@@ -1,0 +1,92 @@
+Index: src/main/java/org/example/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\nimport java.util.Scanner;\r\n\r\nimport gui_codebehind.GUI_BoardController;\r\nimport gui_fields.GUI_Board;\r\nimport gui_fields.GUI_Field;\r\nimport gui_fields.GUI_Player;\r\nimport gui_main.GUI;\r\nimport gui_codebehind.GUI_FieldFactory;\r\nimport gui_codebehind.GUI_Center;\r\n\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n        bræt Bræt = new bræt();\r\n        Bræt.Board();\r\n        Scanner scan = new Scanner(System.in);\r\n        Terning terning1 = new Terning();\r\n        Terning terning2 = new Terning();\r\n        Terning terning3 = new Terning();\r\n        Terning terning4 = new Terning();\r\n        Player spiller1 = new Player();\r\n        Player spiller2 = new Player();\r\n        Player spiller3 = new Player();\r\n        Player spiller4 = new Player();\r\n        GUI gui = new GUI();\r\n        GUI_Player player1 = new GUI_Player(\"Spiller 1\", 20);\r\n        GUI_Player player2 = new GUI_Player(\"Spiller 2\", 20);\r\n        GUI_Player player3 = new GUI_Player(\"Spiller 3\", 20);\r\n        GUI_Player player4 = new GUI_Player(\"Spiller 4\", 20);\r\n\r\n        int Playerlocation1 = spiller1.SpillerLokation;\r\n        int Playerlocation2 = spiller2.SpillerLokation;\r\n        int Playerlocation3 = spiller3.SpillerLokation;\r\n        int Playerlocation4 = spiller4.SpillerLokation;\r\n        int PlayerBalance1 = player1.getBalance();\r\n        int PlayerBalance2 = player2.getBalance();\r\n        int PlayerBalance3 = player3.getBalance();\r\n        int PlayerBalance4 = player4.getBalance();\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        String chosenButton = gui.getUserButtonPressed(\r\n                \"Choose number of players\",\r\n                \"2 players\", \"3 players\", \"4 players\"\r\n        );\r\n\r\n        if (chosenButton == (\"2 players\")) {\r\n            gui.addPlayer(player1);\r\n            gui.addPlayer(player2);\r\n        }\r\n        if (chosenButton == (\"3 players\")) {\r\n            gui.addPlayer(player1);\r\n            gui.addPlayer(player2);\r\n            gui.addPlayer(player3);\r\n        }\r\n        if (chosenButton == (\"4 players\")) {\r\n            gui.addPlayer(player1);\r\n            gui.addPlayer(player2);\r\n            gui.addPlayer(player3);\r\n            gui.addPlayer(player4);\r\n        }\r\n        while ((player1.getBalance()) > 0) {\r\n\r\n            String chosen1Button = gui.getUserButtonPressed(\r\n                    \"Roll a dice\",\r\n                    \"Roll dice\"\r\n            );\r\n\r\n            terning1.roll();\r\n            gui.setDie(terning1.getFaceValue());\r\n            Playerlocation1 = Playerlocation1 += terning1.getFaceValue();\r\n\r\n            //PLAYER 1\r\n            if (Playerlocation1 >= 40) {\r\n                Playerlocation1 = Playerlocation1 % 40;\r\n                PlayerBalance1 += 2;\r\n                player1.setBalance(PlayerBalance1);\r\n\r\n            }\r\n            GUI_Field field1 = gui.getFields()[Playerlocation1];\r\n            player1.getCar().setPosition(field1);\r\n\r\n            String chosen2Button = gui.getUserButtonPressed(\r\n                    \"Roll a dice\",\r\n                    \"Roll dice\"\r\n            );\r\n\r\n            terning2.roll();\r\n            gui.setDie(terning2.getFaceValue());\r\n            Playerlocation2 = Playerlocation2 += terning2.getFaceValue();\r\n            if (Playerlocation2 >= 40) {\r\n                Playerlocation2 = Playerlocation2 % 40;\r\n                PlayerBalance2 += 2;\r\n                player2.setBalance(PlayerBalance2);\r\n            }\r\n            GUI_Field field2 = gui.getFields()[Playerlocation2];\r\n            player2.getCar().setPosition(field2);\r\n\r\n            String chosen3Button = gui.getUserButtonPressed(\r\n                    \"Roll a dice\",\r\n                    \"Roll dice\"\r\n            );\r\n\r\n            terning3.roll();\r\n            gui.setDie(terning3.getFaceValue());\r\n            Playerlocation3 = Playerlocation3 += terning3.getFaceValue();\r\n            if (Playerlocation3 >= 40) {\r\n                Playerlocation3 = Playerlocation3 % 40;\r\n                PlayerBalance3 += 2;\r\n                player3.setBalance(PlayerBalance3);\r\n            }\r\n            GUI_Field field3 = gui.getFields()[Playerlocation3];\r\n            player3.getCar().setPosition(field3);\r\n\r\n\r\n            String chosen4Button = gui.getUserButtonPressed(\r\n                    \"Roll a dice\",\r\n                    \"Roll dice\"\r\n            );\r\n\r\n\r\n            terning4.roll();\r\n            gui.setDie(terning4.getFaceValue());\r\n            Playerlocation4 = Playerlocation4 += terning4.getFaceValue();\r\n            if (Playerlocation4 >= 40) {\r\n                Playerlocation4 = Playerlocation4 % 40;\r\n                PlayerBalance4 += 2;\r\n                player4.setBalance(PlayerBalance4);\r\n            }\r\n            GUI_Field field4 = gui.getFields()[Playerlocation4];\r\n            player4.getCar().setPosition(field4);\r\n\r\n\r\n\r\n        }\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Main.java b/src/main/java/org/example/Main.java
+--- a/src/main/java/org/example/Main.java	(revision 8b9f1b2227d4a1a2f572d32b7a3723f507184320)
++++ b/src/main/java/org/example/Main.java	(date 1672918091135)
+@@ -40,11 +40,6 @@
+         int PlayerBalance4 = player4.getBalance();
+ 
+ 
+-
+-
+-
+-
+-
+         String chosenButton = gui.getUserButtonPressed(
+                 "Choose number of players",
+                 "2 players", "3 players", "4 players"
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e24e4ab2-ca5d-4f9a-98d3-504f2f513f15\" name=\"Changes\" comment=\"Andet commit for deling\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Felter.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Player.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Terning.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/example/bræt.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Ju9BNY1WIxVAVRQ9WHGsy9E9vS\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e24e4ab2-ca5d-4f9a-98d3-504f2f513f15\" name=\"Changes\" comment=\"\" />\r\n      <created>1672916967571</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1672916967571</updated>\r\n      <workItem from=\"1672916968203\" duration=\"938000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Først commit for deling\">\r\n      <created>1672917186353</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672917186353</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Andet commit for deling\">\r\n      <created>1672917420839</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672917420839</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Først commit for deling\" />\r\n    <MESSAGE value=\"Andet commit for deling\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Andet commit for deling\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8b9f1b2227d4a1a2f572d32b7a3723f507184320)
++++ b/.idea/workspace.xml	(date 1672921058043)
+@@ -4,11 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Andet commit for deling">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Terning.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" afterDir="false" />
++    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Commit med få basis principper">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+     </list>
+@@ -54,6 +50,11 @@
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
++  <component name="RecentsManager">
++    <key name="CopyClassDialog.RECENTS_KEY">
++      <recent name="org.example" />
++    </key>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -62,7 +63,7 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1672916967571</updated>
+-      <workItem from="1672916968203" duration="938000" />
++      <workItem from="1672916968203" duration="2323000" />
+     </task>
+     <task id="LOCAL-00001" summary="Først commit for deling">
+       <created>1672917186353</created>
+@@ -78,7 +79,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1672917420839</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Commit med få basis principper">
++      <created>1672918007564</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1672918007564</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -98,6 +106,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Først commit for deling" />
+     <MESSAGE value="Andet commit for deling" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Andet commit for deling" />
++    <MESSAGE value="Commit med få basis principper" />
++    <option name="LAST_COMMIT_MESSAGE" value="Commit med få basis principper" />
+   </component>
+ </project>
+\ No newline at end of file
