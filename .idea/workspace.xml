@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Start til chancekort og generel type kort">
+    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Udvidet chancekort og lidt logik">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChanceKort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChanceKort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Kort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Kort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +93,7 @@
       <workItem from="1672997475467" duration="47000" />
       <workItem from="1672997532262" duration="64000" />
       <workItem from="1673110593340" duration="3401000" />
-      <workItem from="1673174390000" duration="7420000" />
+      <workItem from="1673174390000" duration="8430000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -161,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673174422342</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Udvidet chancekort og lidt logik">
+      <created>1673182762209</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673182762209</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +212,7 @@
     <MESSAGE value="tilføjet kommentare og opdateret Updateposition" />
     <MESSAGE value="Fikset updateposition igen, det hele burde virke nu." />
     <MESSAGE value="Start til chancekort og generel type kort" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start til chancekort og generel type kort" />
+    <MESSAGE value="Udvidet chancekort og lidt logik" />
+    <option name="LAST_COMMIT_MESSAGE" value="Udvidet chancekort og lidt logik" />
   </component>
 </project>

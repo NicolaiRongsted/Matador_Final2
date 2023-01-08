@@ -35,9 +35,6 @@ public class GameController {
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             game.getFace();
 
-            int sum = game.terning1.getFaceValue() + game.terning2.getFaceValue();
-
-            Kort feltLandedOn = handleDiceValue(sum);
 
             //handleGui(feltLandedOn); Håndter GUI, så hvis feltLandedOn = 4,
             //handleCardLogic(feltLandedOn, Player()); her skal specifik spiller indsættes
@@ -69,40 +66,15 @@ public class GameController {
 
     }
 
-    private void moveToField(){
-
-
-
-    }
-
-    private void handleCardLogic(Kort kort, Player player){ //logik til hvordan spillet skal håndtere når spilleren modtager chancekoer og andre
-
-        switch (kort.type) {
-            //Start
-            case ChanceKort -> {
-                var chanceKort = (ChanceKort) kort;
-                handleChanceKort(chanceKort.cardNumber, player);
-            }
-
-            //Chancekort
-            case TredjeKort -> {
-
-            }
-            default -> {
-
-            }
-        }
-
-    }
 
     private void handleChanceKort(int cardNumber, int player, int cardValue, int cardPostion) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
         switch (cardNumber){
             case 1 -> {
-                game.Setposition(player, handleChanceKort(chancekort.getCardPositon()), ); // her skal kort logik udføres
+                game.Setposition(player,chancekort.getCardPositon(cardNumber)); //chancekort der ændrer position
             }
 
             case 2 -> {
-                game.Updatebalance(handleChanceKort(chancekort.getChancekort()), );
+                game.Updatebalance(player,chancekort.getCardValue(cardNumber)); //chancekort der ændrer balance
             }
 
 
