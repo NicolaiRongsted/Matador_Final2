@@ -8,7 +8,7 @@ public class MonopolyGUI {
     public static GUI gui = new GUI();
     static GUI_Player[] player = new GUI_Player[4];
     GUI_Field start = gui.getFields()[0];
-    private Player[] players;
+    public static Player[] players;
     public GUI GUIstartup(){
         return gui;
     }
@@ -36,6 +36,7 @@ public class MonopolyGUI {
         players[ID].setPosition(players[ID].getPosition() + terningkast);
         if (players[ID].getPosition() >= 40){
             players[ID].setPosition(players[ID].getPosition() % 40);
+            Updatebalance(4000, ID);
         }
         GUI_Field field = gui.getFields()[players[ID].getPosition()];
         player[ID].getCar().setPosition(field);
@@ -44,6 +45,7 @@ public class MonopolyGUI {
         GUI_Field field = gui.getFields()[position];
         player[ID].getCar().setPosition(field);
     }
+
 
     public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
         gui.showMessage(msg);
@@ -68,4 +70,11 @@ public class MonopolyGUI {
         gui.displayChanceCard(chancekort);
 
     }
+
+    /*public boolean CustomGamestate(){
+        String Standard = "Standard";
+        String Custom = "Custom";
+        String input = gui.getUserSelection("Standard or custom gamestate?");
+        return input.equals(Standard);
+    }*/
 }

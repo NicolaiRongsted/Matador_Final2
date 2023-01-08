@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gamestates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gamestates.java" afterDir="false" />
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Start af Gamestateloader.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07-01-2023_12_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07-01-2023_12_39__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05-01-2023_13_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05-01-2023_13_17__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gamestate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GamestateLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gamestates.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +82,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="" />
+      <changelist id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Start af Gamestateloader." />
       <created>1672916967571</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -82,6 +90,7 @@
       <workItem from="1672916968203" duration="938000" />
       <workItem from="1672997412965" duration="2191000" />
       <workItem from="1672999613584" duration="2134000" />
+      <workItem from="1673197548053" duration="4481000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
