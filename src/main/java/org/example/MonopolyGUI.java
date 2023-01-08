@@ -14,7 +14,6 @@ public class MonopolyGUI {
     }
     public static int playeramount;
     public void GUIPlayerstart(){
-
         bræt.Board();
         String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
         playeramount = Integer.parseInt(playeramountstring);
@@ -40,7 +39,10 @@ public class MonopolyGUI {
         }
         GUI_Field field = gui.getFields()[players[ID].getPosition()];
         player[ID].getCar().setPosition(field);
-
+    }
+    public void Setposition(int ID, int position){
+        GUI_Field field = gui.getFields()[position];
+        player[ID].getCar().setPosition(field);
     }
 
     public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
