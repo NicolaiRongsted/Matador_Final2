@@ -9,7 +9,6 @@ public class bræt {
     private static int[] felt = {1,3,4,5,6,8,9,11,12,13,14,15,16,18,19,21,23,24,25,26,27,28,29,31,32,34,35,37,38,39};
     public static void Board () {
             GUI_Field[] fields = MonopolyGUI.gui.getFields();
-
             for (int i = 0; i < felt.length; i++){
                 GUI_Field field = fields[felt[i]];
                 field.setSubText(Pris[i]);
