@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="while (playing)&#10;game update position og game update balance">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673110687206</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4">
+      <created>1673175156966</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673175156967</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +153,7 @@
     <MESSAGE value="Player opdateret" />
     <MESSAGE value="GameController start og Gui tests" />
     <MESSAGE value="while (playing)&#10;game update position og game update balance" />
-    <option name="LAST_COMMIT_MESSAGE" value="while (playing)&#10;game update position og game update balance" />
+    <MESSAGE value="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4" />
+    <option name="LAST_COMMIT_MESSAGE" value="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4" />
   </component>
 </project>
