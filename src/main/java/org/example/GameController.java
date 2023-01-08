@@ -10,6 +10,7 @@ public class GameController {
     public void play(){
         game.GUIstartup();
         CreatePlayers();
+        PlayRound();
     }
 
     private void CreatePlayers(){
@@ -18,9 +19,14 @@ public class GameController {
 
 
     private void PlayRound(){
-
+        int Player = 1;
         while (playing) {
             //skal bestemme hvilken spillers tur det er
+            if (Player > 4){
+                Player = 1;
+            }
+            System.out.println("Spiller " + Player + "'s tur");
+            System.out.println("Kast terninger");
 
             //Tjekke om spiller er i fængsel (bedre at gøre der hvor man ruller og hvis man skal rykke)
 
@@ -33,9 +39,9 @@ public class GameController {
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             game.getFace();
             //Skal rykke på spilleren?
-            game.Updateposition(id, game.terning1.getFaceValue() + game.terning2.getFaceValue());
+            game.Updateposition(Player, game.terning1.getFaceValue() + game.terning2.getFaceValue());
             //Over start modtage penge opdatere balance
-            game.Updatebalance(+4000, id);
+            game.Updatebalance(+4000, Player);
             //Indkomstskat betale bede spiller om at vælge betale 10% eller 200 og opdatere balance
 
             //Hvis fængsel låse spiller indtil ude
@@ -51,6 +57,7 @@ public class GameController {
             game.showMessage("Næste spillers tur");
 
             //
+            Player += 1;
         }
 
         game.Updateposition(3,8);
@@ -63,6 +70,6 @@ public class GameController {
 
     private void Landonfield(int PlayerID, int position){
 
-        MonopolyGUI.players[PlayerID] =
+
     }
 }
