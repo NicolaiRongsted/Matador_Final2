@@ -51,7 +51,7 @@ public class GameController {
             //skal gå videre til næste spiller
             game.showMessage("Næste spillers tur");
             //
-            Player += 1;
+            Player = (Player + 1) % 4;
         }
     }
     private void Movetofield(){
