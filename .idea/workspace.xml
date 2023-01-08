@@ -4,17 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Fiks til github merging">
+    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Fikset småting i koden, tilføjet spiller navne, fikset problem med array overflow i PlayRound(), lavet Updatebalance til kommentar.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GamestateLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Gamestates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Terning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Terning.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -124,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673107062502</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fikset småting i koden, tilføjet spiller navne, fikset problem med array overflow i PlayRound(), lavet Updatebalance til kommentar.">
+      <created>1673156796858</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673156796859</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +175,7 @@
     <MESSAGE value="tilføjet kommentare og opdateret Updateposition" />
     <MESSAGE value="Fikset updateposition igen, det hele burde virke nu." />
     <MESSAGE value="Fiks til github merging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fiks til github merging" />
+    <MESSAGE value="Fikset småting i koden, tilføjet spiller navne, fikset problem med array overflow i PlayRound(), lavet Updatebalance til kommentar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikset småting i koden, tilføjet spiller navne, fikset problem med array overflow i PlayRound(), lavet Updatebalance til kommentar." />
   </component>
 </project>

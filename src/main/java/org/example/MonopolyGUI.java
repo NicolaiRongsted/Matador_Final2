@@ -34,8 +34,12 @@ public class MonopolyGUI {
 
     public void Updateposition(int ID, int terningkast){ //Opdater positionen på gui
         players[ID].setPosition(players[ID].getPosition() + terningkast);
+        if (players[ID].getPosition() >= 40){
+            players[ID].setPosition(players[ID].getPosition() % 40);
+        }
         GUI_Field field = gui.getFields()[players[ID].getPosition()];
         player[ID].getCar().setPosition(field);
+
     }
 
     public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
