@@ -44,10 +44,7 @@ public class MonopolyGUI {
         GUI_Field field = gui.getFields()[position];
         player[ID].getCar().setPosition(field);
     }
-    public void Setposition(int ID, int position){
-        GUI_Field field = gui.getFields()[position];
-        player[ID].getCar().setPosition(field);
-    }
+
     public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
         gui.showMessage(msg);
     }

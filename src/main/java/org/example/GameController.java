@@ -3,6 +3,7 @@ package org.example;
 import gui_main.GUI;
 
 public class GameController {
+    SpecialFelter chancekort = new SpecialFelter();
     MonopolyGUI game = new MonopolyGUI();
     boolean playing = true;
     Terning terning1 = new Terning();
@@ -64,4 +65,19 @@ public class GameController {
         game.showDice(roll1, roll2);
         return rolltot;
     }
+    private void handleChanceKort(int cardNumber, int player, int cardValue, int cardPostion) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
+        switch (cardNumber){
+            case 1 -> {
+                game.Setposition(player,chancekort.getCardPositon(cardNumber)); //chancekort der ændrer position
+            }
+
+            case 2 -> {
+                game.Updatebalance(player,chancekort.getCardValue(cardNumber)); //chancekort der ændrer balance
+            }
+
+
+        }
+    }
+
+
 }
