@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Start til chancekort og generel type kort" />
+    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Start til chancekort og generel type kort">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChanceKort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChanceKort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Kort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Kort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +96,7 @@
       <workItem from="1672997475467" duration="47000" />
       <workItem from="1672997532262" duration="64000" />
       <workItem from="1673110593340" duration="3401000" />
+      <workItem from="1673174390000" duration="7420000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -146,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673118244210</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Start til chancekort og generel type kort">
+      <created>1673174422342</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673174422342</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +170,11 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="26d1fcad-3b5e-4407-938e-a8753e38bbbd">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -174,6 +194,11 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="26d1fcad-3b5e-4407-938e-a8753e38bbbd" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Først commit for deling" />
@@ -184,20 +209,5 @@
     <MESSAGE value="Fikset updateposition igen, det hele burde virke nu." />
     <MESSAGE value="Start til chancekort og generel type kort" />
     <option name="LAST_COMMIT_MESSAGE" value="Start til chancekort og generel type kort" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>3</line>
-          <properties class="org.example.Main" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

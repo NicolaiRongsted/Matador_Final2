@@ -75,7 +75,7 @@ public class GameController {
 
     }
 
-    private void handleCardLogic(Kort kort, Player player){
+    private void handleCardLogic(Kort kort, Player player){ //logik til hvordan spillet skal håndtere når spilleren modtager chancekoer og andre
 
         switch (kort.type) {
             //Start
@@ -95,32 +95,20 @@ public class GameController {
 
     }
 
-    private void handleChanceKort(int cardNumber, Player player) {
+    private void handleChanceKort(int cardNumber, int player, int cardValue, int cardPostion) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
         switch (cardNumber){
             case 1 -> {
-                player.setPosition(5); // her skal kort logik udføres
+                game.Setposition(player, handleChanceKort(chancekort.getCardPositon()), ); // her skal kort logik udføres
             }
+
+            case 2 -> {
+                game.Updatebalance(handleChanceKort(chancekort.getChancekort()), );
+            }
+
+
         }
     }
 
-    private Kort handleDiceValue(int value){
-
-        switch (value) {
-            //Start
-            case 0 -> System.out.println("Lav start logik");
-
-            //Chancekort
-            case 2, 7, 17, 22, 33, 36 -> {
-                return chancekort.getChancekort();
-            }
-            default -> {
-                //Slet ret
-                return new ChanceKort("test", KortType.Egendom);
-            }
-        }
-        //Slet ret
-        return new ChanceKort("test", KortType.Egendom);
-    }
 
 
 }
