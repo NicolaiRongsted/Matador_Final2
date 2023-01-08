@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="Udvidet chancekort og lidt logik">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -31,13 +24,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="2Ju9BNY1WIxVAVRQ9WHGsy9E9vS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,7 +41,6 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -88,12 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1672916967571</updated>
       <workItem from="1672916968203" duration="938000" />
-      <workItem from="1672996321770" duration="1080000" />
-      <workItem from="1672997412250" duration="53000" />
-      <workItem from="1672997475467" duration="47000" />
-      <workItem from="1672997532262" duration="64000" />
-      <workItem from="1673110593340" duration="3401000" />
-      <workItem from="1673174390000" duration="8430000" />
+      <workItem from="1672997412965" duration="2191000" />
+      <workItem from="1672999613584" duration="2134000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -116,56 +97,28 @@
       <option name="project" value="LOCAL" />
       <updated>1672992019686</updated>
     </task>
-    <task id="LOCAL-00004" summary="GameController start og Gui tests">
-      <created>1672996439174</created>
+    <task id="LOCAL-00004" summary="while (playing)&#10;game update position og game update balance">
+      <created>1673108679693</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1672996439174</updated>
+      <updated>1673108679694</updated>
     </task>
-    <task id="LOCAL-00005" summary="tilføjet kommentare og opdateret Updateposition">
-      <created>1673043420598</created>
+    <task id="LOCAL-00005" summary="while (playing)&#10;game update position og game update balance">
+      <created>1673110687204</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1673043420598</updated>
+      <updated>1673110687206</updated>
     </task>
-    <task id="LOCAL-00006" summary="Fikset updateposition igen, det hele burde virke nu.">
-      <created>1673090904990</created>
+    <task id="LOCAL-00006" summary="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4">
+      <created>1673175156966</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1673090904990</updated>
+      <updated>1673175156967</updated>
     </task>
-    <task id="LOCAL-00007" summary="Fikset updateposition igen, det hele burde virke nu.">
-      <created>1673090916978</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1673090916978</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Start til chancekort og generel type kort">
-      <created>1673118244210</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1673118244210</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Start til chancekort og generel type kort">
-      <created>1673174422342</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1673174422342</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Udvidet chancekort og lidt logik">
-      <created>1673182762209</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1673182762209</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,11 +127,6 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="26d1fcad-3b5e-4407-938e-a8753e38bbbd">
-          <value>
-            <State />
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -198,21 +146,14 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="26d1fcad-3b5e-4407-938e-a8753e38bbbd" value="TOOL_WINDOW" />
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Først commit for deling" />
     <MESSAGE value="Andet commit for deling" />
     <MESSAGE value="Player opdateret" />
     <MESSAGE value="GameController start og Gui tests" />
-    <MESSAGE value="tilføjet kommentare og opdateret Updateposition" />
-    <MESSAGE value="Fikset updateposition igen, det hele burde virke nu." />
-    <MESSAGE value="Start til chancekort og generel type kort" />
-    <MESSAGE value="Udvidet chancekort og lidt logik" />
-    <option name="LAST_COMMIT_MESSAGE" value="Udvidet chancekort og lidt logik" />
+    <MESSAGE value="while (playing)&#10;game update position og game update balance" />
+    <MESSAGE value="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4" />
+    <option name="LAST_COMMIT_MESSAGE" value="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4" />
   </component>
 </project>

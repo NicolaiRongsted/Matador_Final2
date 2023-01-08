@@ -20,7 +20,6 @@ public class Terning
     public int roll()
     {
         faceValue = (int)(Math.random() * MAX) + 1;
-
         return faceValue;
     }
 
