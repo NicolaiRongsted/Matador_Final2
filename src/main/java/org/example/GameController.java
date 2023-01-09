@@ -106,10 +106,10 @@ public class GameController {
             System.out.println("Spilleren landte på feltet med en ekstraordinær skat");;
         }
         else if (position == 2 || position == 7 || position == 17 || position == 22 || position == 33 || position == 36){
+            int ChancekortTræk = chancekort.getChancekort();
             //Traek chancekort
-            game.displayChanceCard(chancekort.getDescription(chancekort.getChancekort()));
-            chancekort.getChancekort();
-            handleChanceKort(chancekort.getChancekort(),PlayerID, chancekort.getCaseNumber(chancekort.getChancekort()));
+            game.displayChanceCard(chancekort.getDescription(ChancekortTræk));
+            handleChanceKort(ChancekortTræk,PlayerID, chancekort.getCaseNumber(ChancekortTræk));
             System.out.println("Spilleren landte på chancekort");
         }
         else if(position == 10 || position == 20 || position == 0 || position == 40){
