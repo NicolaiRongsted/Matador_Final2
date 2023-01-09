@@ -29,6 +29,9 @@ public class GameController {
     private void PlayRound(){
         int Player = 0;
         while (playing) {
+            if (!game.checkActivePlayer(Player)){
+                Player += 1;
+            }
             if (Player > 3) { // Bestemmer hvilken spillers tur det er.
                 Player = 0;
             }
@@ -121,7 +124,9 @@ public class GameController {
                     game.showMessage("Det er spilleren " + ownable.getOwnerName() + " Der ejer grunden, du skal derfor betale " + ownable.getRent());
                     game.Updatebalance(-Integer.parseInt(ownable.getRent()), PlayerID); //betaling, mangler at give spilleren der ejer grunden pengene.
                     game.Updatebalance(Integer.parseInt(ownable.getRent()), Owner);
-                }
+                } //else if () { Til at koebe huse osv.
+
+                //}
                 //betal leje til spilleren der ejer grunden.
             }
         }
