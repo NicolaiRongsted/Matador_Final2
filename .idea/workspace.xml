@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="LandonField MVP CA. 75%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -67,7 +75,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e24e4ab2-ca5d-4f9a-98d3-504f2f513f15" name="Changes" comment="" />
+      <changelist id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="LandonField MVP CA. 75%" />
       <created>1672916967571</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -75,6 +83,7 @@
       <workItem from="1672916968203" duration="938000" />
       <workItem from="1672997412965" duration="2191000" />
       <workItem from="1672999613584" duration="2134000" />
+      <workItem from="1673217443677" duration="2702000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -154,6 +163,7 @@
     <MESSAGE value="GameController start og Gui tests" />
     <MESSAGE value="while (playing)&#10;game update position og game update balance" />
     <MESSAGE value="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4" />
-    <option name="LAST_COMMIT_MESSAGE" value="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4" />
+    <MESSAGE value="LandonField MVP CA. 75%" />
+    <option name="LAST_COMMIT_MESSAGE" value="LandonField MVP CA. 75%" />
   </component>
 </project>
