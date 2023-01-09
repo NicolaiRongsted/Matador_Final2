@@ -84,6 +84,7 @@ public class GameController {
             System.out.println("Spilleren landte paa faengsel");
         }
         else if (position == 4 || position == 38){
+            game.showMessage("Ej hvor ærgerligt du landte desværre på en af betal skat felterne, og skal derfor betale 2000!");
             game.Updatebalance(-2000, PlayerID);
             System.out.println("Spilleren landte paa skatte ting");;
         }

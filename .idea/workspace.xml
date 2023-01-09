@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="LandonField MVP CA. 75%">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Landonfield opdatering med bedre struktureret kode samt genveje til mest brugte variable.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/bræt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +83,7 @@
       <workItem from="1672916968203" duration="938000" />
       <workItem from="1672997412965" duration="2191000" />
       <workItem from="1672999613584" duration="2134000" />
-      <workItem from="1673217443677" duration="2702000" />
+      <workItem from="1673217443677" duration="3911000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -127,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673175156967</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Landonfield opdatering med bedre struktureret kode samt genveje til mest brugte variable.">
+      <created>1673249157709</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673249157709</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +171,7 @@
     <MESSAGE value="while (playing)&#10;game update position og game update balance" />
     <MESSAGE value="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4" />
     <MESSAGE value="LandonField MVP CA. 75%" />
-    <option name="LAST_COMMIT_MESSAGE" value="LandonField MVP CA. 75%" />
+    <MESSAGE value="Landonfield opdatering med bedre struktureret kode samt genveje til mest brugte variable." />
+    <option name="LAST_COMMIT_MESSAGE" value="Landonfield opdatering med bedre struktureret kode samt genveje til mest brugte variable." />
   </component>
 </project>
