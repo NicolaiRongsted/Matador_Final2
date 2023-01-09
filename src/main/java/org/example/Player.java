@@ -12,6 +12,7 @@ public class Player {
         position =+ terningkast;
     }
     public int getPosition(){return position;}
+    public void forcePosition(int pos){position = pos;}
     public String getName(){
         return name;
     }
