@@ -5,6 +5,7 @@ import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 
+import static org.example.MonopolyGUI.gui;
 import static org.example.MonopolyGUI.*;
 
 public class GameController {
@@ -41,6 +42,7 @@ public class GameController {
             //Tjekke om spiller er i fængsel (bedre at gøre der hvor man ruller og hvis man skal rykke)
             //Hvis spiller er i fængsel Slå 2 ens eller betale og miste tur(Igen bedre i der hvor man opdaterer positionen eller i en seperat funktion, men ikke her.)
             //skal bede en spiller om at slå
+            game.showMessage("Det er Spilleren " + game.getName(Player) + "'s tur");
             //skal slå med terninger
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             //Skal rykke på spilleren?
@@ -73,6 +75,12 @@ public class GameController {
                 }
                 i++;
             }
+            //Chancekort array fejl
+            //komme i faengsel naar de har slaaet 2 ens igen
+            //Chancekort rykke virker ikke
+            //Ingen besked naar man kommer i faengsel
+            //Traekker 4 kort
+
 
 
             //game.Updatebalance(+4000, Player);
@@ -153,7 +161,7 @@ public class GameController {
         return rolltot;
     }
     private void handleChanceKort(int cardNumber, int player, int caseNumber) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
-        switch (cardNumber){
+        switch (caseNumber){
             case 1 -> {
                 game.Setposition(player,chancekort.getCardPositon(cardNumber)); //chancekort der ændrer position
             }
