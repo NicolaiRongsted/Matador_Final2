@@ -5,6 +5,7 @@ import gui_fields.GUI_Ownable;
 import gui_main.GUI;
 
 import static org.example.MonopolyGUI.gui;
+import static org.example.MonopolyGUI.player;
 
 public class GameController {
     SpecialFelter chancekort = new SpecialFelter();
@@ -49,7 +50,7 @@ public class GameController {
                     //game.Updateposition();
                     break;
                 }
-                game.showMessage("Der er blevet to ens, slå igen");
+                game.showMessage("Der er blevet slået to ens, slå igen");
                 game.Updateposition(Player, roll());
                 if (roll1 != roll2) {
                     break;
@@ -81,18 +82,21 @@ public class GameController {
         if (position == 30){
             MonopolyGUI.players[PlayerID].setJailed();
             game.Setposition(PlayerID, 10);
-            System.out.println("Spilleren landte paa faengsel");
+            System.out.println("Spilleren landte på fængsel");
         }
         else if (position == 4 || position == 38){
             game.Updatebalance(-2000, PlayerID);
-            System.out.println("Spilleren landte paa skatte ting");;
+            System.out.println("Spilleren landte på feltet med en ekstraordinær skat");;
         }
         else if (position == 2 || position == 7 || position == 17 || position == 22 || position == 33 || position == 36){
             //Traek chancekort
-            System.out.println("Spilleren landte paa chancekort");
+            game.displayChanceCard(chancekort.getDescription(chancekort.getChancekort()));
+            chancekort.getChancekort();
+            handleChanceKort(chancekort.getChancekort(),PlayerID, chancekort.getCaseNumber(chancekort.getChancekort()));
+            System.out.println("Spilleren landte på chancekort");
         }
         else if(position == 10 || position == 20 || position == 0 || position == 40){
-            game.showMessage("Du landte p[ et feldt hvor der ikke sker noget!");
+            game.showMessage("Du landte på et feldt hvor der ikke sker noget!");
         }
         else {
             System.out.println("Spilleren landte paa en grund");
@@ -128,13 +132,13 @@ public class GameController {
         game.showDice(roll1, roll2);
         return rolltot;
     }
-    private void handleChanceKort(int cardNumber, int player, int cardValue, int cardPostion) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
+    private void handleChanceKort(int cardNumber, int player, int caseNumber) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
         switch (cardNumber){
             case 1 -> {
                 game.Setposition(player,chancekort.getCardPositon(cardNumber)); //chancekort der ændrer position
             }
             case 2 -> {
-                game.Updatebalance(player,chancekort.getCardValue(cardNumber)); //chancekort der ændrer balance
+                game.Updatebalance(chancekort.getCardValue(cardNumber),player); //chancekort der ændrer balance
             }
         }
     }
