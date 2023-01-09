@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Landonfield opdatering med bedre struktureret kode samt genveje til mest brugte variable.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07-01-2023_12_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07-01-2023_12_39__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05-01-2023_13_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05-01-2023_13_17__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-01-2023_10_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-01-2023_10_33__Changes_.xml" afterDir="false" />
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Player kan komme i fængsel og skal slå to ens for at komme ud">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
     </list>
@@ -135,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673249157709</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Player kan komme i fængsel og skal slå to ens for at komme ud">
+      <created>1673272349208</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673272349208</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +177,7 @@
     <MESSAGE value="while (playing)&#10;fixet out of bounds, men mangler antal spillere istedet for %4" />
     <MESSAGE value="LandonField MVP CA. 75%" />
     <MESSAGE value="Landonfield opdatering med bedre struktureret kode samt genveje til mest brugte variable." />
-    <option name="LAST_COMMIT_MESSAGE" value="Landonfield opdatering med bedre struktureret kode samt genveje til mest brugte variable." />
+    <MESSAGE value="Player kan komme i fængsel og skal slå to ens for at komme ud" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player kan komme i fængsel og skal slå to ens for at komme ud" />
   </component>
 </project>

@@ -2,15 +2,16 @@ package org.example;
 
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Ownable;
+import gui_fields.GUI_Player;
 import gui_main.GUI;
 
-import static org.example.MonopolyGUI.gui;
-import static org.example.MonopolyGUI.player;
+import static org.example.MonopolyGUI.*;
 
 public class GameController {
     SpecialFelter chancekort = new SpecialFelter();
     MonopolyGUI game = new MonopolyGUI();
     boolean playing = true;
+
     Terning terning1 = new Terning();
     Terning terning2 = new Terning();
     private int roll1;
@@ -29,6 +30,7 @@ public class GameController {
     private void PlayRound(){
         int Player = 0;
         while (playing) {
+            boolean gotOut = false;
             if (!game.checkActivePlayer(Player)){
                 Player += 1;
             }
@@ -39,31 +41,33 @@ public class GameController {
             //Tjekke om spiller er i fængsel (bedre at gøre der hvor man ruller og hvis man skal rykke)
             //Hvis spiller er i fængsel Slå 2 ens eller betale og miste tur(Igen bedre i der hvor man opdaterer positionen eller i en seperat funktion, men ikke her.)
             //skal bede en spiller om at slå
-            game.showMessage("Det er Spilleren " + game.getName(Player) + "'s tur");
             //skal slå med terninger
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             //Skal rykke på spilleren?
-            if (!MonopolyGUI.players[Player].getJailed()) {
+            if (!players[Player].getJailed()) {
                 game.Updateposition(Player, roll());
-                Landonfield(Player, MonopolyGUI.players[Player].getPosition());
+                Landonfield(Player, players[Player].getPosition());
                 //Over start modtage penge opdatere balance
             }
             else {
-                game.showMessage("Du er er i faengsel slå to ens");
+                game.showMessage("Du er er i faengsel, slå to ens for at komme ud.");
                 roll();
                 if (roll1==roll2){
+                    players[Player].setJailed();
                     game.Updateposition(Player, roll1+roll2);
                     Landonfield(Player, MonopolyGUI.players[Player].getPosition());
+                    gotOut=true;
                 }
             }
             int i = 0; // Tæller til at der kun er 2 ekstra slag
-            while (roll1 == roll2 && !MonopolyGUI.players[Player].getJailed()) {
+            while (roll1 == roll2 && !MonopolyGUI.players[Player].getJailed() && !gotOut) {
                 if (i == 2) {
-                    //game.Updateposition();
+                    players[Player].getJailed();
                     break;
                 }
                 game.showMessage("Der er blevet slået to ens, slå igen");
                 game.Updateposition(Player, roll());
+                Landonfield(Player, players[Player].getPosition());
                 if (roll1 != roll2) {
                     break;
                 }
