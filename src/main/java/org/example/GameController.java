@@ -43,12 +43,21 @@ public class GameController {
             //skal slå med terninger
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             //Skal rykke på spilleren?
-            game.Updateposition(Player, roll());
-            Landonfield(Player, MonopolyGUI.players[Player].getPosition());
-            //Over start modtage penge opdatere balance
-
+            if (!MonopolyGUI.players[Player].getJailed()) {
+                game.Updateposition(Player, roll());
+                Landonfield(Player, MonopolyGUI.players[Player].getPosition());
+                //Over start modtage penge opdatere balance
+            }
+            else {
+                game.showMessage("Du er er i faengsel slå to ens");
+                roll();
+                if (roll1==roll2){
+                    game.Updateposition(Player, roll1+roll2);
+                    Landonfield(Player, MonopolyGUI.players[Player].getPosition());
+                }
+            }
             int i = 0; // Tæller til at der kun er 2 ekstra slag
-            while (roll1 == roll2) {
+            while (roll1 == roll2 && !MonopolyGUI.players[Player].getJailed()) {
                 if (i == 2) {
                     //game.Updateposition();
                     break;
