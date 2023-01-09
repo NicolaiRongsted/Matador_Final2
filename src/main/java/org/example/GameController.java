@@ -105,7 +105,6 @@ public class GameController {
                     int pris = Integer.parseInt(field.getSubText());
                     game.Updatebalance(-pris, PlayerID);
                     ownable.setOwnerName(game.getName(PlayerID));
-
                 }
                 else {
                     //Vil ikke koebe
@@ -113,8 +112,10 @@ public class GameController {
             }
             else{
                 if(ownable.getOwnerName() != game.getName(PlayerID)){
+                    int Owner = getOwner(ownable.getOwnerName());
                     game.showMessage("Det er spilleren " + ownable.getOwnerName() + " Der ejer grunden, du skal derfor betale " + ownable.getRent());
-                    game.Updatebalance(Integer.parseInt(ownable.getRent()), PlayerID);
+                    game.Updatebalance(-Integer.parseInt(ownable.getRent()), PlayerID); //betaling, mangler at give spilleren der ejer grunden pengene.
+                    game.Updatebalance(Integer.parseInt(ownable.getRent()), Owner);
                 }
                 //betal leje til spilleren der ejer grunden.
             }
@@ -137,5 +138,15 @@ public class GameController {
                 game.Updatebalance(player,chancekort.getCardValue(cardNumber)); //chancekort der ændrer balance
             }
         }
+    }
+    private int getOwner(String name){
+        int owner = 5;
+        for (int i = 0; i < game.playeramount; i++){
+            String temp = game.getName(i);
+            if (temp == name){
+                owner = i;
+            }
+        }
+        return owner;
     }
 }
