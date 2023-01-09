@@ -72,6 +72,11 @@ public class MonopolyGUI {
 
     }
 
+    public boolean checkActivePlayer(int id){
+        return players[id].getActive();
+    }
+
+
     /*public boolean CustomGamestate(){
         String Standard = "Standard";
         String Custom = "Custom";
