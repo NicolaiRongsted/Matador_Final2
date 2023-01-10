@@ -14,25 +14,27 @@ public class GameController {
     private boolean Customgamestate = false;
     boolean playing = true;
     private Gamestate save;
-    //private GamestateLoader gamestateLoader;
     public Gamestate gamestates[] = GamestateLoader.getGamestates();
     private int gamestate;
     Terning terning1 = new Terning();
     int roll = 0;
     Terning terning2 = new Terning();
     private int roll1;
-    private int testnumber;
+    private int startpos = 0;
     private int roll2;
     public void play(){
         setGamestate();
         if(!Customgamestate){
             game.GUIstartup();
-            game.GUIPlayerstart(false);
+            game.GUIPlayerstart(false, startpos);
             PlayRound();
         }else{
-            game.GUIstartup();
-            game.GUIPlayerstart(true);
             gamestate -= 3;
+            startpos = gamestates[gamestate].getPosition();
+            game.GUIstartup();
+            game.GUIPlayerstart(true, startpos);
+            game.Setposition(0, startpos);
+            game.Setposition(1, startpos);
             PlayRound();
         }
     }
@@ -65,8 +67,9 @@ public class GameController {
                     forceroll(rolls[roll]);
                     Landonfield(Player, players[Player].getPosition());
                     roll = roll + 1;
-                    if (roll < rolls.length){
+                    if (roll >= rolls.length){
                         Customgamestate = false;
+                        System.out.println("Exiting custom game state");
                     }
                 }else {
                     game.Updateposition(Player, roll());
@@ -125,6 +128,7 @@ public class GameController {
     private void Landonfield(int PlayerID, int position){
 
         if (position == 30){
+            game.showMessage("Spilleren " + (PlayerID+1) + " er blevet faengslet!");
             MonopolyGUI.players[PlayerID].setJailed();
             game.Setposition(PlayerID, 10);
             System.out.println("Spilleren landte på fængsel");
