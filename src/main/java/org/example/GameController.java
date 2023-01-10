@@ -42,7 +42,8 @@ public class GameController {
         int Player = 0;
         while (playing) {
             boolean gotOut = false;
-            if (!game.checkActivePlayer(Player)){
+
+            while (!game.checkActivePlayer(Player)){
                 Player += 1;
             }
             if (Player > 3) { // Bestemmer hvilken spillers tur det er.
@@ -155,6 +156,7 @@ public class GameController {
                     int pris = Integer.parseInt(field.getSubText());
                     game.Updatebalance(-pris, PlayerID);
                     ownable.setOwnerName(game.getName(PlayerID));
+                    players[PlayerID].setOwned(position);
                 }
                 else {
                     //Vil ikke koebe
