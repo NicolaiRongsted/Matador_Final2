@@ -11,8 +11,11 @@ import static org.example.MonopolyGUI.*;
 public class GameController {
     SpecialFelter chancekort = new SpecialFelter();
     MonopolyGUI game = new MonopolyGUI();
+    private boolean Customgamestate = false;
     boolean playing = true;
-
+    private Gamestate save;
+    private GamestateLoader gamestateLoader;
+    Gamestate gamestates[] = gamestateLoader.getGamestates();
     Terning terning1 = new Terning();
     Terning terning2 = new Terning();
     private int roll1;
@@ -26,7 +29,6 @@ public class GameController {
     private void CreatePlayers(){
         game.GUIPlayerstart();
     }
-
 
     private void PlayRound(){
         int Player = 0;
@@ -96,10 +98,6 @@ public class GameController {
             //Skifter spiller, modulus er antallet af spillere der er valgt
             Player = (Player + 1) % game.playeramount;
         }
-    }
-
-    private void Movetofield() {
-
     }
     private void Landonfield(int PlayerID, int position){
 
@@ -179,5 +177,19 @@ public class GameController {
             }
         }
         return owner;
+    }
+    public void setGamestate(){
+        if (!game.Yes_or_no("Would you like to load a custom game state?")){
+            Customgamestate = false;
+        }
+        else {
+            int gamestate = gui.getUserInteger("Which game state would you like to load?");
+            for (int i = 0; i < gamestates.length; i++){
+                if (gamestate == gamestates[i].getcaseNumber()){
+                    save = gamestates[i];
+                    Customgamestate = true;
+                }
+            }
+        }
     }
 }
