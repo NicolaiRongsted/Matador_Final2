@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Start paa gamestates">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Gamestate case 3 virker, skal udvide for resten.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DefaultGamestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DefaultGamestate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gamestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gamestate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GamestateLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GamestateLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +87,7 @@
       <workItem from="1673217443677" duration="3911000" />
       <workItem from="1673301489100" duration="228000" />
       <workItem from="1673332327075" duration="9453000" />
-      <workItem from="1673348102827" duration="7431000" />
+      <workItem from="1673348102827" duration="14478000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -161,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673347906201</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Gamestate case 3 virker, skal udvide for resten.">
+      <created>1673360639532</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673360639532</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +206,7 @@
     <MESSAGE value="Landonfield opdatering med bedre struktureret kode samt genveje til mest brugte variable." />
     <MESSAGE value="Fikset handleChancekort" />
     <MESSAGE value="Start paa gamestates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start paa gamestates" />
+    <MESSAGE value="Gamestate case 3 virker, skal udvide for resten." />
+    <option name="LAST_COMMIT_MESSAGE" value="Gamestate case 3 virker, skal udvide for resten." />
   </component>
 </project>
