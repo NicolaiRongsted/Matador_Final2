@@ -7,6 +7,6 @@ public abstract class DefaultGamestate {
     }
 
     public int getcaseNumber() {
-        return caseNumber;
+        return caseNumber-3;
     }
 }

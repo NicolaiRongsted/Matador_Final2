@@ -5,6 +5,8 @@ import gui_main.GUI;
 import java.io.*;
 
 public class MonopolyGUI {
+    private GamestateLoader gamestateLoader;
+    public Gamestate gamestates[] = gamestateLoader.getGamestates();
     public static GUI gui = new GUI();
     static GUI_Player[] player = new GUI_Player[4];
     GUI_Field start = gui.getFields()[0];
@@ -13,10 +15,14 @@ public class MonopolyGUI {
         return gui;
     }
     public static int playeramount;
-    public void GUIPlayerstart(){
+    public void GUIPlayerstart(boolean testscenario){
         bræt.Board();
-        String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
-        playeramount = Integer.parseInt(playeramountstring);
+        if(!testscenario){
+            String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
+            playeramount = Integer.parseInt(playeramountstring);
+        }else{
+            playeramount = 2;
+        }
         players = new Player[playeramount];
         for (int i = 0; i < playeramount; i++){
             String playername = gui.getUserString("Whats the name of player " + (i + 1) + "?");

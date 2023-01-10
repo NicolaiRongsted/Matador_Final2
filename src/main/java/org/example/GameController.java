@@ -14,21 +14,29 @@ public class GameController {
     private boolean Customgamestate = false;
     boolean playing = true;
     private Gamestate save;
-    private GamestateLoader gamestateLoader;
-    Gamestate gamestates[] = gamestateLoader.getGamestates();
+    //private GamestateLoader gamestateLoader;
+    public Gamestate gamestates[] = GamestateLoader.getGamestates();
+    private int gamestate;
     Terning terning1 = new Terning();
+    int roll = 0;
     Terning terning2 = new Terning();
     private int roll1;
+    private int testnumber;
     private int roll2;
     public void play(){
-        game.GUIstartup();
-        CreatePlayers();
-        PlayRound();
+        setGamestate();
+        if(!Customgamestate){
+            game.GUIstartup();
+            game.GUIPlayerstart(false);
+            PlayRound();
+        }else{
+            game.GUIstartup();
+            game.GUIPlayerstart(true);
+            gamestate -= 3;
+            PlayRound();
+        }
     }
 
-    private void CreatePlayers(){
-        game.GUIPlayerstart();
-    }
 
     private void PlayRound(){
         int Player = 0;
@@ -44,14 +52,27 @@ public class GameController {
             //Tjekke om spiller er i fængsel (bedre at gøre der hvor man ruller og hvis man skal rykke)
             //Hvis spiller er i fængsel Slå 2 ens eller betale og miste tur(Igen bedre i der hvor man opdaterer positionen eller i en seperat funktion, men ikke her.)
             //skal bede en spiller om at slå
-            game.showMessage("Det er Spilleren " + game.getName(Player) + "'s tur");
             //skal slå med terninger
             //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
             //Skal rykke på spilleren?
             if (!players[Player].getJailed()) {
-                game.Updateposition(Player, roll());
-                Landonfield(Player, players[Player].getPosition());
-                //Over start modtage penge opdatere balance
+                System.out.println("Player not in jail");
+                if(Customgamestate){
+                    System.out.println("Custom game state detected.");
+                    System.out.println(gamestate);
+                    int rolls[] = gamestates[gamestate].getForceRoll();
+                    game.Updateposition(Player, rolls[roll]);
+                    forceroll(rolls[roll]);
+                    Landonfield(Player, players[Player].getPosition());
+                    roll = roll + 1;
+                    if (roll < rolls.length){
+                        Customgamestate = false;
+                    }
+                }else {
+                    game.Updateposition(Player, roll());
+                    Landonfield(Player, players[Player].getPosition());
+                    //Over start modtage penge opdatere balance
+                }
             }
             else {
                 game.showMessage("Du er er i faengsel, slå to ens for at komme ud.");
@@ -64,7 +85,9 @@ public class GameController {
                 }
             }
             int i = 0; // Tæller til at der kun er 2 ekstra slag
-            while (roll1 == roll2 && !MonopolyGUI.players[Player].getJailed() && !gotOut) {
+            while (roll1 == roll2 && !MonopolyGUI.players[Player].getJailed() && !gotOut && roll1 != 0) {
+                System.out.println(roll1);
+                System.out.println("Double roll detected");
                 if (i == 2) {
                     players[Player].getJailed();
                     break;
@@ -158,6 +181,15 @@ public class GameController {
         game.showDice(roll1, roll2);
         return rolltot;
     }
+    public void forceroll(int roll){
+        int forceroll1 = roll/2;
+        int forceroll2 = roll-forceroll1;
+        if(forceroll2 == forceroll1){
+            forceroll1 -= 1;
+            forceroll2 += 1;
+        }
+        game.showDice(forceroll1, forceroll2);
+    }
     private void handleChanceKort(int cardNumber, int player, int caseNumber) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
         switch (caseNumber){
             case 1 -> {
@@ -179,15 +211,19 @@ public class GameController {
         return owner;
     }
     public void setGamestate(){
-        if (!game.Yes_or_no("Would you like to load a custom game state?")){
+        System.out.println("setGamestate entered");
+        boolean enterstate = !game.Yes_or_no("Would you like to load a custom game state?");
+        if (enterstate){
             Customgamestate = false;
+            System.out.println("Custom game state set to false");
         }
         else {
-            int gamestate = gui.getUserInteger("Which game state would you like to load?");
+            gamestate = gui.getUserInteger("Which game state would you like to load?");
             for (int i = 0; i < gamestates.length; i++){
-                if (gamestate == gamestates[i].getcaseNumber()){
-                    save = gamestates[i];
+                if (gamestate - 3 == gamestates[i].getcaseNumber()){
+                    System.out.println(gamestate);
                     Customgamestate = true;
+                    System.out.println("Custom game state set to true;");
                 }
             }
         }

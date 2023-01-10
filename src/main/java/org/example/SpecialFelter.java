@@ -37,7 +37,7 @@ public class SpecialFelter {
             new ChanceKort("Ryk tre felter tilbage", KortType.ChanceKort, 20, 0,-3,1),
             new ChanceKort("Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.", KortType.ChanceKort, 21, 0,11,1),
             //new ChanceKort("Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til, hvis selskabet ikke ejes af nogen kan De købe det af banken.", KortType.ChanceKort, 28),
-            new ChanceKort("Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.", KortType.ChanceKort, 22,0,16,1),
+            new ChanceKort("Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.", KortType.ChanceKort, 22,0,15,1),
             new ChanceKort("Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000", KortType.ChanceKort, 23,0,24,1),
             new ChanceKort("Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000", KortType.ChanceKort, 24,0,32,1),
             //new ChanceKort("Tag med den nærmeste færge, hvis de passerer start indkasser da kr 4000", KortType.ChanceKort, 25,0),
@@ -45,10 +45,6 @@ public class SpecialFelter {
             new ChanceKort("Tag til Rådhuspladsen", KortType.ChanceKort, 26,0,39,1),
             //new ChanceKort("Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.", KortType.ChanceKort, 35),
             //new ChanceKort("I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares indtil De får brug for det, eller De kan sælge det. (antal kort: 2)", KortType.ChanceKort, 36),
-
-
-
-
     };
 
     public int getChancekort() { //getChancekort giver os et random kort fra vores 27 mulige kort
