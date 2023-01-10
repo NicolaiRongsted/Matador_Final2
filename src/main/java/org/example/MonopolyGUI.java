@@ -36,6 +36,9 @@ public class MonopolyGUI {
     public void Updatebalance(int leje, int id){ // Updatebalance, fungerer på den måde at man sætter to parameter den skal bruge. En leje og id på personen, som er player: 0, 1, 2 ,
                                                             // Koden er derfor lavet på den måde, at man kalder på playerens id, og derfra sætter playerens balance, udfra hvad playerens
         player[id].setBalance(player[id].getBalance()+leje); // balance er i forvejen, og ligger lejen til eller trækker fra, alt afhængig af om det leje man skal betale eller få
+        if (player[id].getBalance()<0 ){
+            players[id].setActive();
+        }
     }
 
     public void Updateposition(int ID, int terningkast){ //Opdater positionen på gui

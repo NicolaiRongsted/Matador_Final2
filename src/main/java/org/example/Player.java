@@ -3,6 +3,11 @@ package org.example;
 public class Player {
     private int position;
     private String name;
+
+    private int x = 0;
+
+    private int[] owned;
+
     private boolean jailed = false;
     private boolean active = true;
     public Player(int position, String name){
@@ -25,4 +30,14 @@ public class Player {
     public boolean getJailed(){
         return jailed;
     }
+
+    public void setOwned(int position){
+        this.owned[x] = position;
+        x++;
+    }
+
+    public int[] getOwned(){return owned;}
 }
+
+
+
