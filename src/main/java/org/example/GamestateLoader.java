@@ -2,7 +2,7 @@ package org.example;
 
 public class GamestateLoader {
     private static Gamestate[] gamestates = {
-            //new Gamestate(3), //
+            new Gamestate(3, new int[]{3, 3}), //
             //new Gamestate(4), //
             //new Gamestate(5), //
             //new Gamestate(6), //
@@ -12,7 +12,7 @@ public class GamestateLoader {
             //new Gamestate(10), //
 
     };
-    public Gamestate[] getGamestates(){
+    public static Gamestate[] getGamestates(){
         return gamestates;
     }
 }
