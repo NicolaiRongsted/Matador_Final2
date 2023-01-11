@@ -188,13 +188,19 @@ public class GameController {
         return rolltot;
     }
     public void forceroll(int roll){
-        int forceroll1 = roll/2;
-        int forceroll2 = roll-forceroll1;
-        if(forceroll2 == forceroll1){
-            forceroll1 -= 1;
-            forceroll2 += 1;
+        if(!gamestates[gamestate].getForceDouble()){
+            int forceroll1 = roll/2;
+            int forceroll2 = roll-forceroll1;
+            if(forceroll2 == forceroll1){
+                forceroll1 -= 1;
+                forceroll2 += 1;
+            }
+            game.showDice(forceroll1, forceroll2);
+        }else{
+            roll1 = roll/2;
+            roll2 = roll1;
+            game.showDice(roll1, roll2);
         }
-        game.showDice(forceroll1, forceroll2);
     }
     private void handleChanceKort(int cardNumber, int player, int caseNumber) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
         switch (caseNumber){
