@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Gamestate case til og med 7 burde virke">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Gamestate case til og med 8 virker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gamestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gamestate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GamestateLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GamestateLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +86,7 @@
       <workItem from="1673301489100" duration="228000" />
       <workItem from="1673332327075" duration="9453000" />
       <workItem from="1673348102827" duration="14518000" />
-      <workItem from="1673421797781" duration="4014000" />
+      <workItem from="1673421797781" duration="4883000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -180,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673374126653</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Gamestate case til og med 8 virker">
+      <created>1673428893429</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673428893429</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +228,7 @@
     <MESSAGE value="Start paa gamestates" />
     <MESSAGE value="Gamestate case 3 virker, skal udvide for resten." />
     <MESSAGE value="Gamestate case til og med 7 burde virke" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gamestate case til og med 7 burde virke" />
+    <MESSAGE value="Gamestate case til og med 8 virker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gamestate case til og med 8 virker" />
   </component>
 </project>

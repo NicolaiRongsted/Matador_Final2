@@ -35,6 +35,10 @@ public class GameController {
             game.GUIPlayerstart(true, startpos);
             game.Setposition(0, startpos);
             game.Setposition(1, startpos);
+            if(gamestates[gamestate].getInjail()){
+                players[0].setJailed();
+                players[1].setJailed();
+            }
             PlayRound();
         }
     }
@@ -80,7 +84,16 @@ public class GameController {
             }
             else {
                 game.showMessage("Du er er i faengsel, slå to ens for at komme ud.");
-                roll();
+                if(!Customgamestate){
+                    roll();
+                }else{
+                    int rolls[] = gamestates[gamestate].getForceRoll();
+                    forceroll(rolls[roll]);
+                    roll = roll+1;
+                    if(roll >= rolls.length){
+                        Customgamestate = false;
+                    }
+                }
                 if (roll1==roll2){
                     players[Player].setJailed();
                     game.Updateposition(Player, roll1+roll2);
