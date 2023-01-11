@@ -35,6 +35,10 @@ public class GameController {
             game.GUIPlayerstart(true, startpos);
             game.Setposition(0, startpos);
             game.Setposition(1, startpos);
+            if(gamestates[gamestate].getBalance() != 0){
+                game.Updatebalance(gamestates[gamestate].getBalance()-30000, 0);
+                game.Updatebalance(gamestates[gamestate].getBalance()-30000, 1);
+            }
             if(gamestates[gamestate].getInjail()){
                 players[0].setJailed();
                 players[1].setJailed();
@@ -50,6 +54,10 @@ public class GameController {
             boolean gotOut = false;
             if (!game.checkActivePlayer(Player)){
                 Player += 1;
+            }
+            if(playeramount <= 1){
+                game.showMessage("Alle andre spillere er gaaet bankeraat og spilleren " + players[Player].getName() + " har vundet!");
+                break;
             }
             if (Player > 3) { // Bestemmer hvilken spillers tur det er.
                 Player = 0;

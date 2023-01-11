@@ -7,7 +7,8 @@ public class Gamestate extends DefaultGamestate {
     private boolean forceposition;
     private boolean forcedouble;
     private boolean injail;
-    public Gamestate(int caseNumber, boolean forceroll, boolean forcedouble, int[] forceRolls, boolean forceposition, int positions, boolean injail){
+    private int balance;
+    public Gamestate(int caseNumber, boolean forceroll, boolean forcedouble, int[] forceRolls, boolean forceposition, int positions, boolean injail, int balance){
         super(caseNumber);
         this.forceRoll = forceRolls;
         this.positions = positions;
@@ -15,6 +16,7 @@ public class Gamestate extends DefaultGamestate {
         this.forceposition = forceposition;
         this.forcedouble = forcedouble;
         this.injail = injail;
+        this.balance = balance;
     }
     public int[] getForceRoll(){return forceRoll;}
     public int getPosition(){
@@ -26,7 +28,9 @@ public class Gamestate extends DefaultGamestate {
     public boolean getInjail(){
         return injail;
     }
-
+    public int getBalance(){
+        return balance;
+    }
 
 
 }
