@@ -14,25 +14,35 @@ public class GameController {
     private boolean Customgamestate = false;
     boolean playing = true;
     private Gamestate save;
-    //private GamestateLoader gamestateLoader;
     public Gamestate gamestates[] = GamestateLoader.getGamestates();
     private int gamestate;
     Terning terning1 = new Terning();
     int roll = 0;
     Terning terning2 = new Terning();
     private int roll1;
-    private int testnumber;
+    private int startpos = 0;
     private int roll2;
     public void play(){
         setGamestate();
         if(!Customgamestate){
             game.GUIstartup();
-            game.GUIPlayerstart(false);
+            game.GUIPlayerstart(false, startpos);
             PlayRound();
         }else{
-            game.GUIstartup();
-            game.GUIPlayerstart(true);
             gamestate -= 3;
+            startpos = gamestates[gamestate].getPosition();
+            game.GUIstartup();
+            game.GUIPlayerstart(true, startpos);
+            game.Setposition(0, startpos);
+            game.Setposition(1, startpos);
+            if(gamestates[gamestate].getBalance() != 0){
+                game.Updatebalance(gamestates[gamestate].getBalance()-30000, 0);
+                game.Updatebalance(gamestates[gamestate].getBalance()-30000, 1);
+            }
+            if(gamestates[gamestate].getInjail()){
+                players[0].setJailed();
+                players[1].setJailed();
+            }
             PlayRound();
         }
     }
@@ -45,6 +55,10 @@ public class GameController {
 
             while (!game.checkActivePlayer(Player)){
                 Player += 1;
+            }
+            if(playeramount <= 1){
+                game.showMessage("Alle andre spillere er gaaet bankeraat og spilleren " + players[Player].getName() + " har vundet!");
+                break;
             }
             if (Player > 3) { // Bestemmer hvilken spillers tur det er.
                 Player = 0;
@@ -66,8 +80,9 @@ public class GameController {
                     forceroll(rolls[roll]);
                     Landonfield(Player, players[Player].getPosition());
                     roll = roll + 1;
-                    if (roll < rolls.length){
+                    if (roll >= rolls.length){
                         Customgamestate = false;
+                        System.out.println("Exiting custom game state");
                     }
                 }else {
                     game.Updateposition(Player, roll());
@@ -77,7 +92,16 @@ public class GameController {
             }
             else {
                 game.showMessage("Du er er i faengsel, slå to ens for at komme ud.");
-                roll();
+                if(!Customgamestate){
+                    roll();
+                }else{
+                    int rolls[] = gamestates[gamestate].getForceRoll();
+                    forceroll(rolls[roll]);
+                    roll = roll+1;
+                    if(roll >= rolls.length){
+                        Customgamestate = false;
+                    }
+                }
                 if (roll1==roll2){
                     players[Player].setJailed();
                     game.Updateposition(Player, roll1+roll2);
@@ -126,6 +150,7 @@ public class GameController {
     private void Landonfield(int PlayerID, int position){
 
         if (position == 30){
+            game.showMessage("Spilleren " + (PlayerID+1) + " er blevet faengslet!");
             MonopolyGUI.players[PlayerID].setJailed();
             game.Setposition(PlayerID, 10);
             System.out.println("Spilleren landte på fængsel");
@@ -184,13 +209,19 @@ public class GameController {
         return rolltot;
     }
     public void forceroll(int roll){
-        int forceroll1 = roll/2;
-        int forceroll2 = roll-forceroll1;
-        if(forceroll2 == forceroll1){
-            forceroll1 -= 1;
-            forceroll2 += 1;
+        if(!gamestates[gamestate].getForceDouble()){
+            int forceroll1 = roll/2;
+            int forceroll2 = roll-forceroll1;
+            if(forceroll2 == forceroll1){
+                forceroll1 -= 1;
+                forceroll2 += 1;
+            }
+            game.showDice(forceroll1, forceroll2);
+        }else{
+            roll1 = roll/2;
+            roll2 = roll1;
+            game.showDice(roll1, roll2);
         }
-        game.showDice(forceroll1, forceroll2);
     }
     private void handleChanceKort(int cardNumber, int player, int caseNumber) { //logik til hvordan spillet skal håndtere når spilleren modtager chancekort
         switch (caseNumber){
