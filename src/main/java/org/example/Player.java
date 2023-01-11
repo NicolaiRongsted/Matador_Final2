@@ -6,7 +6,7 @@ public class Player {
 
     private int x = 0;
 
-    private int[] owned;
+    private int[] owned = new int[30];
 
     private boolean jailed = false;
     private boolean active = true;
