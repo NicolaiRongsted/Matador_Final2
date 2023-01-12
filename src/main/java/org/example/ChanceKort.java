@@ -13,7 +13,5 @@ public class ChanceKort extends Kort {
         this.cardValue = cardValue;
         this.cardPosition = cardPosition;
         this.caseNumber = caseNumber;
-
-
     }
 }
