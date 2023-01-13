@@ -25,7 +25,10 @@ public class Player {
     public void setJailed(){
         this.jailed = !jailed;
     }
-    public void setActive(){this.active = !active;}
+    public void setActive(){
+        this.active = false;
+
+    }
     public boolean getActive(){return active;}
     public boolean getJailed(){
         return jailed;

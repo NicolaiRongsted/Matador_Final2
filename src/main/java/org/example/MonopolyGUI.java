@@ -40,6 +40,9 @@ public class MonopolyGUI {
         if(player[id].getBalance() < 0){
             gui.showMessage("Spilleren " + player[id].getName() + " Er desværre gået bankeråt og er derfor ude af spillet!");
             players[id].setActive();
+            int[] array = players[id].getOwned();
+            for (int i = 0; i < array.length; i++){
+            }
             playeramount = playeramount - 1;
         }
     }
@@ -87,12 +90,6 @@ public class MonopolyGUI {
     public boolean checkActivePlayer(int id){
         return players[id].getActive();
     }
+    public void clearOwner(){}
 
-
-    /*public boolean CustomGamestate(){
-        String Standard = "Standard";
-        String Custom = "Custom";
-        String input = gui.getUserSelection("Standard or custom gamestate?");
-        return input.equals(Standard);
-    }*/
 }

@@ -3,11 +3,25 @@ import gui_fields.*;
 import gui_main.GUI;
 
 public class bræt {
-    Felter felter[] = { new Felter(1000,50,250,750,2250,4000, 1),
-            new Felter(1000,50,250,400,750,2250, 3),
-            new Felter(1000,100,600,1800,5400,8000, 5),
-            new Felter(1000,100,600,1800,5400,8000, 6),
-            new Felter(1000,150,800,2000,6000,9000, 8),
+    Felter felter[] = {
+            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 6000, 1),
+            new Felter("Hvidovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 6000, 3),
+            //færge new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 5), //færge
+            new Felter("Roskildevej", "Orange",2000, 1000, 100,600,1800,5400,8000, 11000, 6),
+            new Felter("Valby Langgade", "Orange",2000, 1000, 100,600,1800,5400,8000, 11000, 8),
+            new Felter("Allegade", "Orange",2400, 1000, 150,600,1800,6000,9000, 12000, 9),
+            new Felter("Frederiksberg alle", "Grøn",2800, 2000, 200,1000,3000,9000,12500, 15000, 11),
+            new Felter("Bulowsvej", "Grøn",2800, 2000, 200,1000,3000,9000,12500, 15000, 13),
+            new Felter("Gl kongevej", "Grøn",3200, 2000, 250,1250,3750,10000,14000, 18000, 14),
+            new Felter("Bernstorffsvej", "Grå",3600, 2000, 300,1400,4000,11000,15000, 19000,16),
+            new Felter("Hellerupvej", "Grå",3600, 2000, 300,1400,4000,11000,15000, 19000, 18),
+            new Felter("Strandvejen", "Grå",4000, 2000, 350,1600,4400,12000,16000, 20000, 19),
+            new Felter("Trianglen", "Rød",4400, 3000, 350,1800,5000,14000,17500, 21000, 21),
+            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 1),
+            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 1),
+            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 1),
+            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 1),
+
 
     };
     private static String[] Pris = {"1200", "1200", "4000", "2000", "2000", "2400", "2800", "3000", "2800", "3200","4000",
