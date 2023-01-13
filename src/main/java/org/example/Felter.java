@@ -9,10 +9,19 @@ public class Felter {
     private int owner = 5;
     private int rentamounts = 5;
     private int houses = 0;
-    public Felter(int housecost, int leje, int leje1, int leje2, int leje3, int leje4, int position){
-        this.leje = new int[]{leje, leje1, leje2, leje3, leje4};
+    private String color;
+    private int cost;
+    String name;
+    public Felter(String name, String color, int cost, int housecost, int leje, int leje1, int leje2, int leje3, int leje4, int leje5, int position){
+        this.leje = new int[]{leje, leje1, leje2, leje3, leje4, leje5};
         this.housecost = housecost;
         this.position = position;
+        this.color = color;
+        this.cost = cost;
+        this.name = name;
+    }
+    public String getColor(){
+        return color;
     }
 
     public int getOwner(){return owner;}
