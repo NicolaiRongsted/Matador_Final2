@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Huse, burde virke, ikke testet">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07-01-2023_12_39__Changes_.xml" beforeDir="false" />
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Spillere kan selv vælge farve.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673796019521</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Spillere kan selv vælge farve.">
+      <created>1673801870677</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673801870677</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +262,7 @@
     <MESSAGE value="rudimentaer win con" />
     <MESSAGE value="Start på omskrevede felter for at fjerne dependency på ui og for at inkludere en måde at skrive huse ind, tænker at lave en int array der holder positionerne fra alle felter i en farve, som man så kan iterere over for at se om alle er ejet af samme spiller." />
     <MESSAGE value="Huse, burde virke, ikke testet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Huse, burde virke, ikke testet" />
+    <MESSAGE value="Spillere kan selv vælge farve." />
+    <option name="LAST_COMMIT_MESSAGE" value="Spillere kan selv vælge farve." />
   </component>
 </project>
