@@ -39,4 +39,7 @@ public class Felter {
     public int getHouses(){
         return houses;
     }
+    public int getPrice(){
+        return cost;
+    }
 }
