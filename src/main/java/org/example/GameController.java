@@ -283,5 +283,6 @@ public class GameController {
         ownable.setOwnerName(game.getName(player));
         ownable.setBorder(game.player[player].getPrimaryColor());
         players[player].setOwned(position);
+        bræt.felter[position].setOwner(player);
     }
 }

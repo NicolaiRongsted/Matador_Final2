@@ -20,14 +20,19 @@ public class MonopolyGUI {
         return gui;
     }
     public static int playeramount;
+    public int aiamount;
     public void GUIPlayerstart(boolean testscenario, int startposition){
         bræt.Board();
         start = gui.getFields()[startposition];
         if(!testscenario){
-            String playeramountstring = gui.getUserSelection("How many players?", "2", "3", "4");
+            String playeramountstring = gui.getUserSelection("How many players?", "1", "2", "3", "4");
             playeramount = Integer.parseInt(playeramountstring);
         }else{
             playeramount = 2;
+        }
+        boolean ai = Yes_or_no("Du har valgt " + playeramount + "Antal spillere, vil du gerne fylde resten af pladserne med AI?");
+        if(ai){
+            playeramount = 4;
         }
         player = new GUI_Player[playeramount];
         players = new Player[playeramount];
@@ -44,6 +49,7 @@ public class MonopolyGUI {
             }else {player[i].getCar().setPrimaryColor(Color.black);}
             player[i].getCar().setPosition(start);
         }
+
     }
 
     public void Updatebalance(int leje, int id){ // Updatebalance, fungerer på den måde at man sætter to parameter den skal bruge. En leje og id på personen, som er player: 0, 1, 2 ,

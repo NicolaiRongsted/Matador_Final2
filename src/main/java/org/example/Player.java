@@ -5,7 +5,7 @@ public class Player {
     private String name;
 
     private int x = 0;
-
+    private boolean isAI = false;
     private int[] owned = new int[30];
 
     private boolean jailed = false;
@@ -32,6 +32,12 @@ public class Player {
     public boolean getActive(){return active;}
     public boolean getJailed(){
         return jailed;
+    }
+    public void ai(){
+        this.isAI = true;
+    }
+    public boolean isAI(){
+        return isAI;
     }
 
     public void setOwned(int position){
