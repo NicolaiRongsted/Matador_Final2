@@ -66,12 +66,6 @@ public class GameController {
                 Player = 0;
             }
             game.showMessage("Det er Spilleren " + game.getName(Player) + "'s tur");
-            //Tjekke om spiller er i fængsel (bedre at gøre der hvor man ruller og hvis man skal rykke)
-            //Hvis spiller er i fængsel Slå 2 ens eller betale og miste tur(Igen bedre i der hvor man opdaterer positionen eller i en seperat funktion, men ikke her.)
-            //skal bede en spiller om at slå
-            //skal slå med terninger
-            //skal vise hvad man slog (At vise hvad der bliver slået er nok også bedst at gøre i roll.)
-            //Skal rykke på spilleren?
             if (!players[Player].getJailed()) {
                 System.out.println("Player not in jail");
                 if(Customgamestate){
@@ -89,7 +83,6 @@ public class GameController {
                 }else {
                     game.Updateposition(Player, roll());
                     Landonfield(Player, players[Player].getPosition());
-                    //Over start modtage penge opdatere balance
                 }
             }
             else {
@@ -127,23 +120,6 @@ public class GameController {
                 }
                 i++;
             }
-            //Chancekort array fejl
-            //komme i faengsel naar de har slaaet 2 ens igen
-            //Chancekort rykke virker ikke
-            //Ingen besked naar man kommer i faengsel
-            //Traekker 4 kort
-
-
-
-            //game.Updatebalance(+4000, Player);
-
-            //Indkomstskat betale bede spiller om at vælge betale 10% eller 200 og opdatere balance
-            //Hvis fængsel låse spiller indtil ude
-            //Hvis u-købt felt bede spiller om at købe og opdatere balance
-            //Hvis købt felt betale leje og opdatere balance
-            //Hvis chance felt trække kort
-            //Udføre chancekort
-            //skal gå videre til næste spiller
             game.showMessage("Næste spillers tur");
             //Skifter spiller, modulus er antallet af spillere der er valgt
             Player = (Player + 1) % game.playeramount;
@@ -188,10 +164,9 @@ public class GameController {
             }
             else{
                 if(bræt.felter[position].getOwner() != PlayerID){
-                    int Owner = getOwner(ownable.getOwnerName());
                     game.showMessage("Det er spilleren " + ownable.getOwnerName() + " Der ejer grunden, du skal derfor betale " + bræt.felter[position].getRent());
                     game.Updatebalance(bræt.felter[position].getRent(), PlayerID); //betaling, mangler at give spilleren der ejer grunden pengene.
-                    game.Updatebalance(bræt.felter[position].getRent(), Owner);
+                    game.Updatebalance(bræt.felter[position].getRent(), bræt.felter[position].getOwner());
                 } else if (bræt.felter[position].getOwner() == PlayerID) {
                     game.showMessage("Du ejer selv feltet!");
                     int[] array = bræt.getColors(bræt.felter[position].getColor());
