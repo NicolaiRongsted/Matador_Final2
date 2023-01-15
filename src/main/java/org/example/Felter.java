@@ -26,6 +26,9 @@ public class Felter {
 
     public int getOwner(){return owner;}
     public void setOwner(int owner){this.owner = owner;}
+    public int getHousecost(){
+        return housecost;
+    }
     public int getRent(){
         return leje[houses];
     }
