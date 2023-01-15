@@ -173,14 +173,12 @@ public class GameController {
         else {
             GUI_Field field = gui.getFields()[position];
             GUI_Ownable ownable = (GUI_Ownable) field;
-            if (ownable.getOwnerName() == null){
+            if (bræt.felter[position].getOwner() == 5){
                 boolean buy = game.Yes_or_no("Vil du gerne købe feltet");
                 if(buy){
-                    //Vil gerne koebe
-                    int pris = Integer.parseInt(field.getSubText());
-                    game.Updatebalance(-pris, PlayerID);
-                    ownable.setOwnerName(game.getName(PlayerID));
-                    players[PlayerID].setOwned(position);
+                    if(player[PlayerID].getBalance() - bræt.felter[position].getPrice() < 0){
+                        game.showMessage("Du har desværre ikke nok penge til at købe feltet!");
+                    }else{buyField(position, PlayerID);}
                 }
                 else {
                     //Vil ikke koebe
@@ -277,5 +275,13 @@ public class GameController {
                 }
             }
         }
+    }
+
+    public void buyField(int position, int player){
+        game.Updatebalance(-bræt.felter[position].getPrice(), player);
+        GUI_Ownable ownable = (GUI_Ownable) gui.getFields()[position];
+        ownable.setOwnerName(game.getName(player));
+        ownable.setBorder(game.player[player].getPrimaryColor());
+        players[player].setOwned(position);
     }
 }
