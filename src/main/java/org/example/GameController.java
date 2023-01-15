@@ -1,5 +1,6 @@
 package org.example;
 
+import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
@@ -56,6 +57,7 @@ public class GameController {
             while (!game.checkActivePlayer(Player)){
                 Player += 1;
             }
+
             if(playeramount <= 1){
                 game.showMessage("Alle andre spillere er gaaet bankeraat og spilleren " + players[Player].getName() + " har vundet!");
                 break;
