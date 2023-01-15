@@ -3,7 +3,7 @@ import gui_fields.*;
 import gui_main.GUI;
 
 public class bræt {
-    Felter felter[] = {
+    static Felter felter[] = {
             new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 6000, 1),
             new Felter("Hvidovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 6000, 3),
             //færge new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 5), //færge
@@ -17,12 +17,16 @@ public class bræt {
             new Felter("Hellerupvej", "Grå",3600, 2000, 300,1400,4000,11000,15000, 19000, 18),
             new Felter("Strandvejen", "Grå",4000, 2000, 350,1600,4400,12000,16000, 20000, 19),
             new Felter("Trianglen", "Rød",4400, 3000, 350,1800,5000,14000,17500, 21000, 21),
-            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 1),
-            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 1),
-            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 1),
-            new Felter("Rødovrevej", "Blå",1200, 1000, 50,250,750,2250,4000, 1),
-
-
+            new Felter("Østerbrogade", "Rød",4400, 3000, 350,1800,5000,14000,17500, 2100, 23),
+            new Felter("Grønningen", "Rød",4800, 3000, 400,2000,6000,15000,18500, 22000, 24),
+            new Felter("Bredgade", "Hvid",5200, 3000, 450,2200,6600,16000,19500, 23000, 26),
+            new Felter("Kgs. Nytorv", "Hvid",5200, 3000, 450,2200,6600,16000,19500, 23000, 27),
+            new Felter("Østergade", "Hvid",5600, 3000, 500,2400,7200,17000,20500, 24000, 29),
+            new Felter("Amagertorv", "Gul",6000, 4000, 550,2600,7800,18000,22000, 25000, 31),
+            new Felter("Vimmelskaftet", "Gul",6000, 4000, 550,2600,7800,18000,22000, 25000,32),
+            new Felter("Nygade", "Gul",6400, 4000, 600,3000,9000,20000,24000, 28000,34),
+            new Felter("Frederiksberggade", "Lilla",7000, 4000, 700,3500,10000,22000,26000, 30000, 37),
+            new Felter("Rådhuspladsen", "Lilla",8000, 4000, 1000,4000,12000,28000,34000, 40000, 39),
     };
     private static String[] Pris = {"1200", "1200", "4000", "2000", "2000", "2400", "2800", "3000", "2800", "3200","4000",
             "3600", "3600", "4000", "4400", "4400", "4800", "4000", "5200", "5200", "3000", "5600", "6000",
@@ -40,6 +44,26 @@ public class bræt {
             }
      }
 
+     public static int[] getColors(String color){
+        String c = color.toLowerCase();
+        if(c.equals("blå")){
+            return new int[] {1,3};
+        } else if (c.equals("orange")) {
+            return new int[] {6,8,9};
+        } else if (c.equals("grøn")){
+            return new int[] {11,13,14};
+        } else if (c.equals("grå")){
+            return new int[] {16,18,19};
+        } else if (c.equals("rød")){
+            return new int[] {21,23,24};
+        } else if (c.equals("hvid")){
+            return new int[] {26,27,29};
+        } else if (c.equals("gul")){
+            return new int[] {31,32,34};
+        } else {
+            return new int[] {37,39};
+        }
+     }
 
      public static String[] getPris(){
         return Pris;

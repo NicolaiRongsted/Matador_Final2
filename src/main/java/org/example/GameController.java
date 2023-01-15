@@ -151,7 +151,7 @@ public class GameController {
 
         if (position == 30){
             game.showMessage("Spilleren " + (PlayerID+1) + " er blevet faengslet!");
-            MonopolyGUI.players[PlayerID].setJailed();
+            players[PlayerID].setJailed();
             game.Setposition(PlayerID, 10);
             System.out.println("Spilleren landte på fængsel");
         }
@@ -171,7 +171,6 @@ public class GameController {
             game.showMessage("Du landte på et feldt hvor der ikke sker noget!");
         }
         else {
-            System.out.println("Spilleren landte paa en grund");
             GUI_Field field = gui.getFields()[position];
             GUI_Ownable ownable = (GUI_Ownable) field;
             if (ownable.getOwnerName() == null){
@@ -190,13 +189,31 @@ public class GameController {
             else{
                 if(ownable.getOwnerName() != game.getName(PlayerID)){
                     int Owner = getOwner(ownable.getOwnerName());
-                    game.showMessage("Det er spilleren " + ownable.getOwnerName() + " Der ejer grunden, du skal derfor betale " + ownable.getRent());
-                    game.Updatebalance(-Integer.parseInt(ownable.getRent()), PlayerID); //betaling, mangler at give spilleren der ejer grunden pengene.
-                    game.Updatebalance(Integer.parseInt(ownable.getRent()), Owner);
-                } //else if () { Til at koebe huse osv.
-
-                //}
-                //betal leje til spilleren der ejer grunden.
+                    game.showMessage("Det er spilleren " + ownable.getOwnerName() + " Der ejer grunden, du skal derfor betale " + bræt.felter[position].getRent());
+                    game.Updatebalance(bræt.felter[position].getRent(), PlayerID); //betaling, mangler at give spilleren der ejer grunden pengene.
+                    game.Updatebalance(bræt.felter[position].getRent(), Owner);
+                } else if (ownable.getOwnerName().equals(game.getName(PlayerID))) {
+                    game.showMessage("Du ejer selv feltet!");
+                    int[] array = bræt.getColors(bræt.felter[position].getColor());
+                    int amountowned = 0;
+                    for (int i = 0; i < array.length; i++){
+                        field = gui.getFields()[array[i]];
+                        ownable = (GUI_Ownable) field;
+                        if(ownable.getOwnerName().equals(game.getName(PlayerID))){
+                            amountowned = amountowned + 1;
+                        }
+                    }
+                    if(amountowned == array.length){
+                        int houseprice = bræt.felter[position].getHousecost();
+                        boolean buildhouse = game.Yes_or_no("Du ejer alle felterne i denne farve, vil du gerne bygge huse? Det ville koste: " + array.length*houseprice);
+                        if(buildhouse){
+                            game.Updatebalance(array.length*houseprice, PlayerID);
+                            for (int i = 0; i < array.length; i++){
+                                bræt.felter[array[i]].setHouses(bræt.felter[array[i]].getHouses()+1);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
