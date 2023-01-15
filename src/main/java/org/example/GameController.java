@@ -173,7 +173,7 @@ public class GameController {
         else {
             GUI_Field field = gui.getFields()[position];
             GUI_Ownable ownable = (GUI_Ownable) field;
-            if (bræt.felter[position].getOwner() == 5){
+            if (ownable.getOwnerName() == null){
                 boolean buy = game.Yes_or_no("Vil du gerne købe feltet");
                 if(buy){
                     if(player[PlayerID].getBalance() - bræt.felter[position].getPrice() < 0){
