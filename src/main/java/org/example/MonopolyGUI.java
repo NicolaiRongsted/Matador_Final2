@@ -2,13 +2,18 @@ package org.example;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
+
+import java.awt.*;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MonopolyGUI {
     private GamestateLoader gamestateLoader;
     public Gamestate gamestates[] = gamestateLoader.getGamestates();
     public static GUI gui = new GUI();
-    static GUI_Player[] player = new GUI_Player[4];
+    public ArrayList<String> colors = new ArrayList<>(Arrays.asList("cyan", "magenta", "lightgray", "black"));
+    static GUI_Player[] player;
     GUI_Field start = gui.getFields()[0];
     public static Player[] players;
     public GUI GUIstartup(){
@@ -24,12 +29,19 @@ public class MonopolyGUI {
         }else{
             playeramount = 2;
         }
+        player = new GUI_Player[playeramount];
         players = new Player[playeramount];
         for (int i = 0; i < playeramount; i++){
             String playername = gui.getUserString("Whats the name of player " + (i + 1) + "?");
+            String chosenColor = gui.getUserSelection("Hvilken farve vil du gerne have?", colors.toArray(new String[colors.size()]));
+            colors.remove(chosenColor);
             players[i] = new Player(0, playername);
             player[i] = new GUI_Player(playername, 30000);
             gui.addPlayer(player[i]);
+            if (chosenColor.equals("cyan")){player[i].getCar().setPrimaryColor(Color.cyan);
+            }else if(chosenColor.equals("magenta")){player[i].getCar().setPrimaryColor(Color.magenta);
+            }else if(chosenColor.equals("lightgray")){player[i].getCar().setPrimaryColor(Color.LIGHT_GRAY);
+            }else {player[i].getCar().setPrimaryColor(Color.black);}
             player[i].getCar().setPosition(start);
         }
     }
