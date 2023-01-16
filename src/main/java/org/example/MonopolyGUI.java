@@ -35,7 +35,7 @@ public class MonopolyGUI {
         }else{
             playeramount = 2;
         }
-        boolean ai = Yes_or_no("Du har valgt " + playeramount + "Antal spillere, vil du gerne fylde resten af pladserne med AI?");
+        boolean ai = Yes_or_no("Du har valgt " + playeramount + " Antal spillere, vil du gerne fylde resten af pladserne med AI?");
         if(ai){
             playeramount = 4;
         }
@@ -84,7 +84,6 @@ public class MonopolyGUI {
         GUI_Field field = gui.getFields()[position];
         player[ID].getCar().setPosition(field);
     }
-
 
     public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
         gui.showMessage(msg);
