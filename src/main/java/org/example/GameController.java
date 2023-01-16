@@ -5,7 +5,6 @@ import gui_fields.GUI_Field;
 import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-
 import static org.example.MonopolyGUI.gui;
 import static org.example.MonopolyGUI.*;
 
@@ -65,6 +64,9 @@ public class GameController {
                 Player = 0;
             }
             game.showMessage("Det er Spilleren " + game.getName(Player) + "'s tur");
+            if (players[Player].isAI()){
+
+            }
             if (!players[Player].getJailed()) {
                 if(Customgamestate){
                     System.out.println("Custom game state detected.");
