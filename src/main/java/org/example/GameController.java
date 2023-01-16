@@ -174,9 +174,9 @@ public class GameController {
                     for (int i = 0; i < array.length; i++){
                         field = gui.getFields()[array[i]];
                         ownable = (GUI_Ownable) field;
-                        if(ownable.getOwnerName().equals(game.getName(PlayerID))){
+                       /* if(ownable.getOwnerName().equals(game.getName(PlayerID))){
                             amountowned = amountowned + 1;
-                        }
+                        }*/
                     }
                     if(amountowned == array.length){
                         int houseprice = bræt.felter[position].getHousecost();
