@@ -32,6 +32,7 @@ public class MonopolyGUI {
         }
         boolean ai = Yes_or_no("Du har valgt " + playeramount + "Antal spillere, vil du gerne fylde resten af pladserne med AI?");
         if(ai){
+            aiamount = 4 - playeramount;
             playeramount = 4;
         }
         player = new GUI_Player[playeramount];
@@ -48,6 +49,9 @@ public class MonopolyGUI {
             }else if(chosenColor.equals("lightgray")){player[i].getCar().setPrimaryColor(Color.LIGHT_GRAY);
             }else {player[i].getCar().setPrimaryColor(Color.black);}
             player[i].getCar().setPosition(start);
+        }
+        for (int i = 4 - aiamount; i < playeramount; i++){
+            players[i].ai();
         }
 
     }
