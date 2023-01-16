@@ -1,7 +1,10 @@
 package org.example;
+
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
+
 
 import java.awt.*;
 import java.io.*;
@@ -9,12 +12,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MonopolyGUI {
+
+
     private GamestateLoader gamestateLoader;
     public Gamestate gamestates[] = gamestateLoader.getGamestates();
     public static GUI gui = new GUI();
     public ArrayList<String> colors = new ArrayList<>(Arrays.asList("cyan", "magenta", "lightgray", "black"));
     static GUI_Player[] player;
     GUI_Field start = gui.getFields()[0];
+    GUI_Ownable Sut;
     public static Player[] players;
     public GUI GUIstartup(){
         return gui;
@@ -41,7 +47,7 @@ public class MonopolyGUI {
             String chosenColor = gui.getUserSelection("Hvilken farve vil du gerne have?", colors.toArray(new String[colors.size()]));
             colors.remove(chosenColor);
             players[i] = new Player(0, playername);
-            player[i] = new GUI_Player(playername, 30000);
+            player[i] = new GUI_Player(playername, 3000);
             gui.addPlayer(player[i]);
             if (chosenColor.equals("cyan")){player[i].getCar().setPrimaryColor(Color.cyan);
             }else if(chosenColor.equals("magenta")){player[i].getCar().setPrimaryColor(Color.magenta);
@@ -49,7 +55,6 @@ public class MonopolyGUI {
             }else {player[i].getCar().setPrimaryColor(Color.black);}
             player[i].getCar().setPosition(start);
         }
-
     }
 
     public void Updatebalance(int leje, int id){ // Updatebalance, fungerer på den måde at man sætter to parameter den skal bruge. En leje og id på personen, som er player: 0, 1, 2 ,
@@ -57,10 +62,11 @@ public class MonopolyGUI {
         player[id].setBalance(player[id].getBalance()+leje); // balance er i forvejen, og ligger lejen til eller trækker fra, alt afhængig af om det leje man skal betale eller få
         if(player[id].getBalance() < 0){
             gui.showMessage("Spilleren " + player[id].getName() + " Er desværre gået bankeråt og er derfor ude af spillet!");
-            players[id].setActive();
             int[] array = players[id].getOwned();
             for (int i = 0; i < array.length; i++){
+                clearOwner();
             }
+            players[id].setActive();
             playeramount = playeramount - 1;
         }
     }
@@ -82,6 +88,7 @@ public class MonopolyGUI {
 
     public void showMessage(String msg){ //GUI er lavet statisk og kan tilgås fra andre klasser. og der er derfor ikke behov for denne.
         gui.showMessage(msg);
+
     }
 
     public void showDice(int dice1, int dice2){ //skal hedde noget andet end getFace da det ikke er det den gør.
@@ -107,6 +114,9 @@ public class MonopolyGUI {
     public boolean checkActivePlayer(int id){
         return players[id].getActive();
     }
-    public void clearOwner(){}
+    public void clearOwner() {
 
+        Sut.setOwnerName(null);
+
+    }
 }
