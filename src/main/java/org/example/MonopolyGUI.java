@@ -12,15 +12,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MonopolyGUI {
-
-
     private GamestateLoader gamestateLoader;
     public Gamestate gamestates[] = gamestateLoader.getGamestates();
     public static GUI gui = new GUI();
     public ArrayList<String> colors = new ArrayList<>(Arrays.asList("cyan", "magenta", "lightgray", "black"));
     static GUI_Player[] player;
     GUI_Field start = gui.getFields()[0];
-    GUI_Ownable Sut;
+
     public static Player[] players;
     public GUI GUIstartup(){
         return gui;
@@ -47,7 +45,7 @@ public class MonopolyGUI {
             String chosenColor = gui.getUserSelection("Hvilken farve vil du gerne have?", colors.toArray(new String[colors.size()]));
             colors.remove(chosenColor);
             players[i] = new Player(0, playername);
-            player[i] = new GUI_Player(playername, 3000);
+            player[i] = new GUI_Player(playername, 30000);
             gui.addPlayer(player[i]);
             if (chosenColor.equals("cyan")){player[i].getCar().setPrimaryColor(Color.cyan);
             }else if(chosenColor.equals("magenta")){player[i].getCar().setPrimaryColor(Color.magenta);
@@ -64,7 +62,7 @@ public class MonopolyGUI {
             gui.showMessage("Spilleren " + player[id].getName() + " Er desværre gået bankeråt og er derfor ude af spillet!");
             int[] array = players[id].getOwned();
             for (int i = 0; i < array.length; i++){
-                clearOwner();
+                clearOwner(array[i]);
             }
             players[id].setActive();
             playeramount = playeramount - 1;
@@ -114,9 +112,12 @@ public class MonopolyGUI {
     public boolean checkActivePlayer(int id){
         return players[id].getActive();
     }
-    public void clearOwner() {
-
-        Sut.setOwnerName(null);
-
+    public void clearOwner(int position) {
+        if (position != 0) {
+            GUI_Ownable Sut = (GUI_Ownable) gui.getFields()[position];
+            Sut.setOwnerName(null);
+            bræt.felter[position].setOwner(5);
+        }
+        System.out.println("Spiller ejer ikke noget");
     }
 }

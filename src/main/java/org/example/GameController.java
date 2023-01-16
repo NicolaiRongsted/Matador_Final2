@@ -262,4 +262,5 @@ public class GameController {
         players[player].setOwned(position);
         bræt.felter[position].setOwner(player);
     }
+
 }

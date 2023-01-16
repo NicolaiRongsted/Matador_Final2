@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="I gang med at få en metode til at fjerne en spiller som ejer af et felt når de går bankerot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Felter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
     </list>
@@ -91,7 +90,7 @@
       <workItem from="1673421797781" duration="6039000" />
       <workItem from="1673518457845" duration="934000" />
       <workItem from="1673867981087" duration="402000" />
-      <workItem from="1673870389823" duration="7959000" />
+      <workItem from="1673870389823" duration="13350000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -219,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673801870677</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="I gang med at få en metode til at fjerne en spiller som ejer af et felt når de går bankerot">
+      <created>1673884018623</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673884018623</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +273,17 @@
     <MESSAGE value="Start på omskrevede felter for at fjerne dependency på ui og for at inkludere en måde at skrive huse ind, tænker at lave en int array der holder positionerne fra alle felter i en farve, som man så kan iterere over for at se om alle er ejet af samme spiller." />
     <MESSAGE value="Huse, burde virke, ikke testet" />
     <MESSAGE value="Spillere kan selv vælge farve." />
-    <option name="LAST_COMMIT_MESSAGE" value="Spillere kan selv vælge farve." />
+    <MESSAGE value="I gang med at få en metode til at fjerne en spiller som ejer af et felt når de går bankerot" />
+    <option name="LAST_COMMIT_MESSAGE" value="I gang med at få en metode til at fjerne en spiller som ejer af et felt når de går bankerot" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
