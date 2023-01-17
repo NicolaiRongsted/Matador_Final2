@@ -76,14 +76,18 @@ public class MonopolyGUI {
                                                             // Koden er derfor lavet på den måde, at man kalder på playerens id, og derfra sætter playerens balance, udfra hvad playerens
         player[id].setBalance(player[id].getBalance()+leje); // balance er i forvejen, og ligger lejen til eller trækker fra, alt afhængig af om det leje man skal betale eller få
         if(player[id].getBalance() < 0){
-                int[] array1 = players[id].getOwned();
-                gui.getUserSelection("Hvilken grund vil du sælge?", array1.toString());
-                //sellField();
+            int[] array1 = players[id].getOwned();
+            ArrayList<Integer> felter = new ArrayList<>(array1.length);
+            int sælgFelt = Integer.parseInt(gui.getUserSelection("Hvilken grund vil du sælge", Arrays.toString(felter.toArray())));
+            sellField(sælgFelt);
+
+            if(player[id].getBalance() < 0) {
                 gui.showMessage("Spilleren " + player[id].getName() + " Er desværre gået bankeråt og er derfor ude af spillet!");
                 int[] array = players[id].getOwned();
                 for (int i = 0; i < array.length; i++) {
                     clearOwner(array[i]);
                 }
+            }
 
             players[id].setActive();
             playeramount = playeramount - 1;
@@ -135,8 +139,8 @@ public class MonopolyGUI {
     }
     public void clearOwner(int position) {
         if (position != 0) {
-            GUI_Ownable Sut = (GUI_Ownable) gui.getFields()[position];
-            Sut.setOwnerName(null);
+            GUI_Ownable felt = (GUI_Ownable) gui.getFields()[position];
+            felt.setOwnerName(null);
             bræt.felter[position].setOwner(5);
         }
         System.out.println("Spiller ejer ikke noget");
