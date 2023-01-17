@@ -16,7 +16,7 @@ import static org.example.MonopolyGUI.*;
 public class GameController {
     SpecialFelter chancekort = new SpecialFelter();
     MonopolyGUI game = new MonopolyGUI();
-    public int round = 0;
+    public int round = 1;
     private boolean Customgamestate = false;
     boolean playing = true;
     private SaveGame monopolyGame;
@@ -147,7 +147,7 @@ public class GameController {
             Player = (Player + 1) % game.playeramount;
             round++;
             UpdateInfo(Player);
-            if(round%5 == 0){
+            if(round%10 == 0){
                 monopolyGame.saveGame();
             }
         }
@@ -313,13 +313,20 @@ public class GameController {
             game.Setposition(i, positions[i]);
         }
         Player = monopolyGame.getCurrentPlayer();
-        int[] ownedProperties = monopolyGame.getPlayer1Properties();
-        for (int j = 0; j < ownedProperties.length; j++){
-            if (ownedProperties[j] == 0){
-                break;
+        for (int i = 0; i < playeramount; i++){
+            int[] ownedProperties = monopolyGame.getPlayerProperties(i);
+            for (int j = 0; j < ownedProperties.length; j++){
+                if (ownedProperties[j] == 0){
+                    break;
+                }
+                GUI_Ownable ownable = (GUI_Ownable) gui.getFields()[ownedProperties[j]];
+                ownable.setOwnerName(game.getName(i));
+                ownable.setBorder(game.player[0].getPrimaryColor());
+                players[i].setOwned(ownedProperties[j]);
+                bræt.felter[ownedProperties[j]].setOwner(i);
             }
-
         }
+
     }
 
     public void UpdateInfo(int player){

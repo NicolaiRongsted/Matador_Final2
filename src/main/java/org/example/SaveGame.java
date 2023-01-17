@@ -63,18 +63,16 @@ public class SaveGame implements Serializable {
         this.player3Properties = player3Properties;
         this.player4Properties = player4Properties;
     }
-    public int[] getPlayer1Properties(){
-        return player1Properties;
-    }
-    public int[] getPlayer2Properties(){
-        return player2Properties;
-    }
-
-    public int[] getPlayer3Properties(){
-        return player3Properties;
-    }
-    public int[] getPlayer4Properties(){
-        return player4Properties;
+    public int[] getPlayerProperties(int player){
+        if (player == 0){
+            return player1Properties;
+        }else if (player == 1){
+            return player2Properties;
+        }else if (player == 2){
+            return player3Properties;
+        }else {
+            return player4Properties;
+        }
     }
     public void setPlayerOrAi(int i, boolean ai) {
         this.playerAI[i] = ai;
