@@ -48,7 +48,7 @@ public class SpecialFelter {
     };
 
     public int getChancekort() { //getChancekort giver os et random kort fra vores 27 mulige kort
-        int antalKort = 27;
+        int antalKort = 25;
         int randomValue = (int)(Math.random() * antalKort) + 1;
 
         return randomValue;
