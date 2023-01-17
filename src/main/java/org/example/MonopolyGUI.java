@@ -66,6 +66,7 @@ public class MonopolyGUI {
             }else {player[j].getCar().setPrimaryColor(Color.black);}
             players[j].ai();
             colors.remove(0);
+            players[j].ai();
             player[j].getCar().setPosition(start);
         }
         playeramount=4;
