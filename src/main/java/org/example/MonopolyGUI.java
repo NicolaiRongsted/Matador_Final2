@@ -36,10 +36,11 @@ public class MonopolyGUI {
         }
         boolean ai = Yes_or_no("Du har valgt " + playeramount + " Antal spillere, vil du gerne fylde resten af pladserne med AI?");
         if(ai){
-            playeramount = 4;
+            aiamount = 4 - playeramount;
+            System.out.println(aiamount);
         }
-        player = new GUI_Player[playeramount];
-        players = new Player[playeramount];
+        player = new GUI_Player[playeramount + aiamount];
+        players = new Player[playeramount + aiamount];
         for (int i = 0; i < playeramount; i++){
             String playername = gui.getUserString("Whats the name of player " + (i + 1) + "?");
             String chosenColor = gui.getUserSelection("Hvilken farve vil du gerne have?", colors.toArray(new String[colors.size()]));
@@ -52,6 +53,19 @@ public class MonopolyGUI {
             }else if(chosenColor.equals("lightgray")){player[i].getCar().setPrimaryColor(Color.LIGHT_GRAY);
             }else {player[i].getCar().setPrimaryColor(Color.black);}
             player[i].getCar().setPosition(start);
+        }
+        System.out.println("Foer for");
+        for(int j = playeramount; j < aiamount + playeramount; j++){
+            System.out.println("I for");
+            players[j] = new Player(0, "Bot " + j);
+            player[j] = new GUI_Player("Bot " + j, 30000);
+            gui.addPlayer(player[j]);
+            if("magenta".equals(colors.get(0))){player[j].getCar().setPrimaryColor(Color.magenta);}
+            else if("cyan".equals(colors.get(0))){player[j].getCar().setPrimaryColor(Color.cyan);
+            }else if("lightgray".equals(colors.get(0))){player[j].getCar().setPrimaryColor(Color.LIGHT_GRAY);
+            }else {player[j].getCar().setPrimaryColor(Color.black);}
+            colors.remove(0);
+            player[j].getCar().setPosition(start);
         }
     }
 

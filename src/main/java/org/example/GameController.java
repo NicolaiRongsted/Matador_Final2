@@ -53,7 +53,6 @@ public class GameController {
         int Player = 0;
         while (playing) {
             boolean gotOut = false;
-
             while (!game.checkActivePlayer(Player)){
                 Player += 1;
             }
@@ -67,7 +66,6 @@ public class GameController {
             }
             game.showMessage("Det er Spilleren " + game.getName(Player) + "'s tur");
             if (!players[Player].getJailed()) {
-                System.out.println("Player not in jail");
                 if(Customgamestate){
                     System.out.println("Custom game state detected.");
                     System.out.println(gamestate);
@@ -86,22 +84,37 @@ public class GameController {
                 }
             }
             else {
-                game.showMessage("Du er er i faengsel, slå to ens for at komme ud.");
-                if(!Customgamestate){
-                    roll();
+                String jail;
+                if(!players[Player].isAI()){
+                    jail = game.gui.getUserButtonPressed("Vil du gerne købe dig ud eller prøve at slå 2 ens for at komme ud?", "Købe, Pris:1000", "Slå");
                 }else{
-                    int rolls[] = gamestates[gamestate].getForceRoll();
-                    forceroll(rolls[roll]);
-                    roll = roll+1;
-                    if(roll >= rolls.length){
-                        Customgamestate = false;
+                    if(player[Player].getBalance() > 5000){
+                        jail = "numse";
+                    }else{
+                        jail = "Slå";
                     }
                 }
-                if (roll1==roll2){
+                if(jail.equals("Slå")){
+                    if(!Customgamestate){
+                        roll();
+                    }else{
+                        int rolls[] = gamestates[gamestate].getForceRoll();
+                        forceroll(rolls[roll]);
+                        roll = roll+1;
+                        if(roll >= rolls.length){
+                            Customgamestate = false;
+                        }
+                    }
+                    if (roll1==roll2){
+                        players[Player].setJailed();
+                        game.Updateposition(Player, roll1+roll2);
+                        Landonfield(Player, MonopolyGUI.players[Player].getPosition());
+                        gotOut=true;
+                    }
+                }else {
+                    game.Updatebalance(-1000, Player);
                     players[Player].setJailed();
-                    game.Updateposition(Player, roll1+roll2);
-                    Landonfield(Player, MonopolyGUI.players[Player].getPosition());
-                    gotOut=true;
+                    gotOut = true;
                 }
             }
             int i = 0; // Tæller til at der kun er 2 ekstra slag
@@ -152,14 +165,20 @@ public class GameController {
             GUI_Field field = gui.getFields()[position];
             GUI_Ownable ownable = (GUI_Ownable) field;
             if (bræt.felter[position].getOwner() == 5){
-                boolean buy = game.Yes_or_no("Vil du gerne købe feltet");
-                if(buy){
-                    if(player[PlayerID].getBalance() - bræt.felter[position].getPrice() < 0){
-                        game.showMessage("Du har desværre ikke nok penge til at købe feltet!");
-                    }else{buyField(position, PlayerID);}
-                }
-                else {
-                    //Vil ikke koebe
+                if(!players[PlayerID].isAI()){
+                    boolean buy = game.Yes_or_no("Vil du gerne købe feltet");
+                    if(buy){
+                        if(player[PlayerID].getBalance() - bræt.felter[position].getPrice() < 0){
+                            game.showMessage("Du har desværre ikke nok penge til at købe feltet!");
+                        }else{buyField(position, PlayerID);}
+                    }
+                    else {
+                        //Vil ikke koebe
+                    }
+                }else{
+                    if(bræt.felter[position].getPrice() < player[PlayerID].getBalance()/2){
+                        buyField(position, PlayerID);
+                    }
                 }
             }
             else{
@@ -174,9 +193,9 @@ public class GameController {
                     for (int i = 0; i < array.length; i++){
                         field = gui.getFields()[array[i]];
                         ownable = (GUI_Ownable) field;
-                       /* if(ownable.getOwnerName().equals(game.getName(PlayerID))){
+                        if(ownable.getOwnerName().equals(game.getName(PlayerID))){
                             amountowned = amountowned + 1;
-                        }*/
+                        }
                     }
                     if(amountowned == array.length){
                         int houseprice = bræt.felter[position].getHousecost();
