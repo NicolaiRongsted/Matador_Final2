@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="I gang med at man kan sælge grunde når man løber tør for penge. Prøver at få hvilke grunde spilleren ejer ned på en liste så de kan vælge hvilken grund de vil sælge.">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Man kan sælge felter nu mangler at sørge for at hvis spilleren ikke ejer nogle felter bliver spilleren ikke spurgt om at sælge et felt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +90,7 @@
       <workItem from="1673348102827" duration="14518000" />
       <workItem from="1673421797781" duration="6039000" />
       <workItem from="1673518457845" duration="934000" />
-      <workItem from="1673980792887" duration="7254000" />
+      <workItem from="1673980792887" duration="8377000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -259,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673973549902</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Man kan sælge felter nu mangler at sørge for at hvis spilleren ikke ejer nogle felter bliver spilleren ikke spurgt om at sælge et felt">
+      <created>1673988368386</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1673988368386</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +320,7 @@
     <MESSAGE value="Fikset endnu flere smaa ting" />
     <MESSAGE value="I gang med at man kan sælge grunde når man løber tør for penge" />
     <MESSAGE value="I gang med at man kan sælge grunde når man løber tør for penge. Prøver at få hvilke grunde spilleren ejer ned på en liste så de kan vælge hvilken grund de vil sælge." />
-    <option name="LAST_COMMIT_MESSAGE" value="I gang med at man kan sælge grunde når man løber tør for penge. Prøver at få hvilke grunde spilleren ejer ned på en liste så de kan vælge hvilken grund de vil sælge." />
+    <MESSAGE value="Man kan sælge felter nu mangler at sørge for at hvis spilleren ikke ejer nogle felter bliver spilleren ikke spurgt om at sælge et felt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Man kan sælge felter nu mangler at sørge for at hvis spilleren ikke ejer nogle felter bliver spilleren ikke spurgt om at sælge et felt" />
   </component>
 </project>

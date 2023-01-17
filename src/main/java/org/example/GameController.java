@@ -184,7 +184,7 @@ public class GameController {
             else{
                 if(bræt.felter[position].getOwner() != PlayerID){
                     game.showMessage("Det er spilleren " + ownable.getOwnerName() + " Der ejer grunden, du skal derfor betale " + bræt.felter[position].getRent());
-                    game.Updatebalance(bræt.felter[position].getRent(), PlayerID); //betaling, mangler at give spilleren der ejer grunden pengene.
+                    game.Updatebalance(-bræt.felter[position].getRent(), PlayerID); //betaling, mangler at give spilleren der ejer grunden pengene.
                     game.Updatebalance(bræt.felter[position].getRent(), bræt.felter[position].getOwner());
                 } else if (bræt.felter[position].getOwner() == PlayerID) {
                     game.showMessage("Du ejer selv feltet!");

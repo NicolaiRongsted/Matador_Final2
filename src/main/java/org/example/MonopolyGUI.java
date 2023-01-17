@@ -46,7 +46,7 @@ public class MonopolyGUI {
             String chosenColor = gui.getUserSelection("Hvilken farve vil du gerne have?", colors.toArray(new String[colors.size()]));
             colors.remove(chosenColor);
             players[i] = new Player(0, playername);
-            player[i] = new GUI_Player(playername, 3000);
+            player[i] = new GUI_Player(playername, 30000);
             gui.addPlayer(player[i]);
             if (chosenColor.equals("cyan")){player[i].getCar().setPrimaryColor(Color.cyan);
             }else if(chosenColor.equals("magenta")){player[i].getCar().setPrimaryColor(Color.magenta);
@@ -76,9 +76,7 @@ public class MonopolyGUI {
                                                             // Koden er derfor lavet på den måde, at man kalder på playerens id, og derfra sætter playerens balance, udfra hvad playerens
          // balance er i forvejen, og ligger lejen til eller trækker fra, alt afhængig af om det leje man skal betale eller få
         if(player[id].getBalance()+leje < 0){
-
             //System.out.println(getFieldNavn(5));
-
             int[] array1 = players[id].getOwned();
             ArrayList<String> felter = new ArrayList<>();
             for (int a=0; a < array1.length; a++){
@@ -86,15 +84,13 @@ public class MonopolyGUI {
                     break;
                 }
                 felter.add(getFieldNavn(array1[a]));
+                if(array1[a]!=0){
+                    String sælgFelt = gui.getUserSelection("Hvilken grund vil du sælge", felter.toArray(new String[0]));
+                    System.out.println(sælgFelt);
+                    sellField(array1[felter.indexOf(sælgFelt)], id);
+                }
             }
             //System.out.println(felter.get(0));
-            if() {
-                String sælgFelt = gui.getUserSelection("Hvilken grund vil du sælge", felter.toArray(new String[felter.size()]));
-                System.out.println(sælgFelt);
-                sellField(array1[felter.indexOf(sælgFelt)], id);
-            }
-
-
         }
         player[id].setBalance(player[id].getBalance()+leje);
         if(player[id].getBalance() < 0) {
