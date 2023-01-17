@@ -114,6 +114,9 @@ public class MonopolyGUI {
         player[ID].getCar().setPosition(field);
     }
     public void Setposition(int ID, int position){
+        if(position > 0 ){
+            position = 40 + position;
+        }
         players[ID].forcePosition(position);
         GUI_Field field = gui.getFields()[position];
         player[ID].getCar().setPosition(field);
