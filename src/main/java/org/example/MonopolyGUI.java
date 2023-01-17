@@ -84,11 +84,12 @@ public class MonopolyGUI {
                     break;
                 }
                 felter.add(getFieldNavn(array1[a]));
-                if(array1[a]!=0){
-                    String sælgFelt = gui.getUserSelection("Hvilken grund vil du sælge", felter.toArray(new String[0]));
-                    System.out.println(sælgFelt);
-                    sellField(array1[felter.indexOf(sælgFelt)], id);
+                if(array1[a] == 0){
+                    break;
                 }
+                String sælgFelt = gui.getUserSelection("Hvilken grund vil du sælge", felter.toArray(new String[0]));
+                System.out.println(sælgFelt);
+                sellField(array1[felter.indexOf(sælgFelt)], id);
             }
             //System.out.println(felter.get(0));
         }
@@ -114,8 +115,10 @@ public class MonopolyGUI {
         player[ID].getCar().setPosition(field);
     }
     public void Setposition(int ID, int position){
-        if(position > 0 ){
+        if(position < 0 ){
             position = 40 + position;
+        }else if (position > 40){
+            position = position % 40;
         }
         players[ID].forcePosition(position);
         GUI_Field field = gui.getFields()[position];
