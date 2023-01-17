@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Fikset endnu flere smaa ting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,20 +37,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marcu/IdeaProjects/Matador_Final2 - Copy&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/marcu/IdeaProjects/Matador_Final2 - Copy",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -245,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673812936151</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="I gang med at man kan sælge grunde når man løber tør for penge">
+      <created>1673969572283</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673969572283</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +302,7 @@
     <MESSAGE value="Spillere kan selv vælge farve og farven de vælger bliver sat som kanten af grunden når de køber et feldt." />
     <MESSAGE value="fikset nogen smaa ting" />
     <MESSAGE value="Fikset endnu flere smaa ting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fikset endnu flere smaa ting" />
+    <MESSAGE value="I gang med at man kan sælge grunde når man løber tør for penge" />
+    <option name="LAST_COMMIT_MESSAGE" value="I gang med at man kan sælge grunde når man løber tør for penge" />
   </component>
 </project>
