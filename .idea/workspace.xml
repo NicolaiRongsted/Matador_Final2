@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Gamestate case 3 virker, skal udvide for resten.">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Fikset chancekort -3 og +3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SaveGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marcu/IdeaProjects/Matador_Final2 - Copy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -85,7 +86,9 @@
       <workItem from="1673217443677" duration="3911000" />
       <workItem from="1673301489100" duration="228000" />
       <workItem from="1673332327075" duration="9453000" />
-      <workItem from="1673348102827" duration="14478000" />
+      <workItem from="1673348102827" duration="14518000" />
+      <workItem from="1673421797781" duration="6039000" />
+      <workItem from="1673518457845" duration="934000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -164,7 +167,91 @@
       <option name="project" value="LOCAL" />
       <updated>1673360639532</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Gamestate case til og med 7 burde virke">
+      <created>1673374108219</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673374108219</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Gamestate case til og med 7 burde virke">
+      <created>1673374126653</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673374126653</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Gamestate case til og med 8 virker">
+      <created>1673428893429</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673428893429</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Gamestate case til og med 9 vioker">
+      <created>1673429781016</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673429781016</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Start på omskrevede felter for at fjerne dependency på ui og for at inkludere en måde at skrive huse ind, tænker at lave en int array der holder positionerne fra alle felter i en farve, som man så kan iterere over for at se om alle er ejet af samme spiller.">
+      <created>1673623232135</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673623232135</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Huse, burde virke, ikke testet">
+      <created>1673796019521</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673796019521</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Spillere kan selv vælge farve.">
+      <created>1673801870677</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673801870677</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Spillere kan selv vælge farve og farven de vælger bliver sat som kanten af grunden når de køber et feldt.">
+      <created>1673803258871</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673803258871</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fikset nogen smaa ting">
+      <created>1673806003332</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673806003332</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fikset nogen smaa ting">
+      <created>1673806540417</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673806540417</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fikset endnu flere smaa ting">
+      <created>1673812936151</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673812936151</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fikset chancekort -3 og +3">
+      <created>1673966919804</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673966919804</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +292,17 @@
     <MESSAGE value="Fikset handleChancekort" />
     <MESSAGE value="Start paa gamestates" />
     <MESSAGE value="Gamestate case 3 virker, skal udvide for resten." />
-    <option name="LAST_COMMIT_MESSAGE" value="Gamestate case 3 virker, skal udvide for resten." />
+    <MESSAGE value="Gamestate case til og med 7 burde virke" />
+    <MESSAGE value="Gamestate case til og med 8 virker" />
+    <MESSAGE value="Gamestate case til og med 9 vioker" />
+    <MESSAGE value="rudimentaer win con" />
+    <MESSAGE value="Start på omskrevede felter for at fjerne dependency på ui og for at inkludere en måde at skrive huse ind, tænker at lave en int array der holder positionerne fra alle felter i en farve, som man så kan iterere over for at se om alle er ejet af samme spiller." />
+    <MESSAGE value="Huse, burde virke, ikke testet" />
+    <MESSAGE value="Spillere kan selv vælge farve." />
+    <MESSAGE value="Spillere kan selv vælge farve og farven de vælger bliver sat som kanten af grunden når de køber et feldt." />
+    <MESSAGE value="fikset nogen smaa ting" />
+    <MESSAGE value="Fikset endnu flere smaa ting" />
+    <MESSAGE value="Fikset chancekort -3 og +3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikset chancekort -3 og +3" />
   </component>
 </project>
