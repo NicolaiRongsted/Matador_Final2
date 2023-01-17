@@ -57,8 +57,8 @@ public class MonopolyGUI {
         System.out.println("Foer for");
         for(int j = playeramount; j < aiamount + playeramount; j++){
             System.out.println("I for");
-            players[j] = new Player(0, "Bot " + j);
-            player[j] = new GUI_Player("Bot " + j, 30000);
+            players[j] = new Player(0, "Bot " + (j-playeramount));
+            player[j] = new GUI_Player("Bot " + (j-playeramount), 30000);
             gui.addPlayer(player[j]);
             if("magenta".equals(colors.get(0))){player[j].getCar().setPrimaryColor(Color.magenta);}
             else if("cyan".equals(colors.get(0))){player[j].getCar().setPrimaryColor(Color.cyan);
@@ -114,6 +114,9 @@ public class MonopolyGUI {
         player[ID].getCar().setPosition(field);
     }
     public void Setposition(int ID, int position){
+        if(position > 0 ){
+            position = 40 + position;
+        }
         players[ID].forcePosition(position);
         GUI_Field field = gui.getFields()[position];
         player[ID].getCar().setPosition(field);
