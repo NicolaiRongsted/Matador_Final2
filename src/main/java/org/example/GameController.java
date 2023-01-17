@@ -5,14 +5,22 @@ import gui_fields.GUI_Field;
 import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 import static org.example.MonopolyGUI.gui;
 import static org.example.MonopolyGUI.*;
 
 public class GameController {
     SpecialFelter chancekort = new SpecialFelter();
     MonopolyGUI game = new MonopolyGUI();
+    public int round = 0;
     private boolean Customgamestate = false;
     boolean playing = true;
+    private SaveGame monopolyGame;
+    public int Player = 0;
     private Gamestate save;
     public Gamestate gamestates[] = GamestateLoader.getGamestates();
     private int gamestate;
@@ -49,7 +57,6 @@ public class GameController {
 
 
     private void PlayRound(){
-        int Player = 0;
         while (playing) {
             boolean gotOut = false;
             while (!game.checkActivePlayer(Player)){
@@ -138,6 +145,11 @@ public class GameController {
             game.showMessage("Næste spillers tur");
             //Skifter spiller, modulus er antallet af spillere der er valgt
             Player = (Player + 1) % game.playeramount;
+            round++;
+            UpdateInfo(Player);
+            if(round%5 == 0){
+                monopolyGame.saveGame();
+            }
         }
     }
     private void Landonfield(int PlayerID, int position){
@@ -289,4 +301,35 @@ public class GameController {
         bræt.felter[position].setOwner(player);
     }
 
+    public void LoadGame(){
+        boolean[] array = monopolyGame.getPlayerAI();
+        int[] positions = monopolyGame.getPlayerPosition();
+        for (int i = 0; i < playeramount; i++){
+            player[i].setBalance(monopolyGame.getPlayerMoney(i));
+            if(array[i]){
+                players[i].ai();
+            }
+            players[i].setJailed();
+            game.Setposition(i, positions[i]);
+        }
+        Player = monopolyGame.getCurrentPlayer();
+        int[] ownedProperties = monopolyGame.getPlayer1Properties();
+        for (int j = 0; j < ownedProperties.length; j++){
+            if (ownedProperties[j] == 0){
+                break;
+            }
+
+        }
+    }
+
+    public void UpdateInfo(int player){
+        for (int i = 0; i < playeramount; i++){
+            monopolyGame.setPlayerMoney(i, game.player[i].getBalance());
+            monopolyGame.setPlayersInJail(i, players[i].getJailed());
+            monopolyGame.setPlayerOrAi(i, players[i].isAI());
+            monopolyGame.setPlayerPosition(i, players[i].getPosition());
+        }
+        monopolyGame.setPlayerProperties(players[0].getOwned(), players[1].getOwned(), players[2].getOwned(), players[3].getOwned());
+        monopolyGame.setCurrentPlayer(player);
+    }
 }
