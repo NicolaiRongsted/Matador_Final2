@@ -145,11 +145,11 @@ public class GameController {
             game.showMessage("Næste spillers tur");
             //Skifter spiller, modulus er antallet af spillere der er valgt
             Player = (Player + 1) % game.playeramount;
-            round++;
-            UpdateInfo(Player);
-            if(round%10 == 0){
-                monopolyGame.saveGame();
-            }
+            //round++;
+            //UpdateInfo(Player);
+            //if(round%10 == 0){
+                //monopolyGame.saveGame();
+            //}
         }
     }
     private void Landonfield(int PlayerID, int position){
