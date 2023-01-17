@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="I gang med at få en metode til at fjerne en spiller som ejer af et felt når de går bankerot">
+    <list default="true" id="69b7ec9c-8c71-4283-ac0c-e8650d42b4ef" name="Changes" comment="Fikset endnu flere smaa ting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SpecialFelter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +90,6 @@
       <workItem from="1673348102827" duration="14518000" />
       <workItem from="1673421797781" duration="6039000" />
       <workItem from="1673518457845" duration="934000" />
-      <workItem from="1673867981087" duration="402000" />
-      <workItem from="1673870389823" duration="13350000" />
     </task>
     <task id="LOCAL-00001" summary="Først commit for deling">
       <created>1672917186353</created>
@@ -217,14 +217,35 @@
       <option name="project" value="LOCAL" />
       <updated>1673801870677</updated>
     </task>
-    <task id="LOCAL-00019" summary="I gang med at få en metode til at fjerne en spiller som ejer af et felt når de går bankerot">
-      <created>1673884018623</created>
+    <task id="LOCAL-00019" summary="Spillere kan selv vælge farve og farven de vælger bliver sat som kanten af grunden når de køber et feldt.">
+      <created>1673803258871</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1673884018623</updated>
+      <updated>1673803258871</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fikset nogen smaa ting">
+      <created>1673806003332</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673806003332</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fikset nogen smaa ting">
+      <created>1673806540417</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673806540417</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fikset endnu flere smaa ting">
+      <created>1673812936151</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673812936151</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,22 +293,9 @@
     <MESSAGE value="Start på omskrevede felter for at fjerne dependency på ui og for at inkludere en måde at skrive huse ind, tænker at lave en int array der holder positionerne fra alle felter i en farve, som man så kan iterere over for at se om alle er ejet af samme spiller." />
     <MESSAGE value="Huse, burde virke, ikke testet" />
     <MESSAGE value="Spillere kan selv vælge farve." />
-    <MESSAGE value="I gang med at få en metode til at fjerne en spiller som ejer af et felt når de går bankerot" />
-    <option name="LAST_COMMIT_MESSAGE" value="I gang med at få en metode til at fjerne en spiller som ejer af et felt når de går bankerot" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.ClassCastException" package="java.lang" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/MonopolyGUI.java</url>
-          <line>123</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Spillere kan selv vælge farve og farven de vælger bliver sat som kanten af grunden når de køber et feldt." />
+    <MESSAGE value="fikset nogen smaa ting" />
+    <MESSAGE value="Fikset endnu flere smaa ting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikset endnu flere smaa ting" />
   </component>
 </project>

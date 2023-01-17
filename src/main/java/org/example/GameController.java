@@ -242,6 +242,9 @@ public class GameController {
             case 2 -> {
                 game.Updatebalance(chancekort.getCardValue(cardNumber),player); //chancekort der ændrer balance
             }
+            case 3 -> {
+                game.Updateposition(player, chancekort.getCardPositon(cardNumber));
+            }
         }
     }
     private int getOwner(String name){
