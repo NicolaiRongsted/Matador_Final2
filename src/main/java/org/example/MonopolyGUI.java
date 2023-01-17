@@ -79,19 +79,25 @@ public class MonopolyGUI {
             //System.out.println(getFieldNavn(5));
             int[] array1 = players[id].getOwned();
             ArrayList<String> felter = new ArrayList<>();
+            boolean cantSell = false;
             for (int a=0; a < array1.length; a++){
                 if (array1[a]==0){
+                    cantSell = true;
                     break;
                 }
                 felter.add(getFieldNavn(array1[a]));
                 if(array1[a] == 0){
+                    cantSell = true;
                     break;
                 }
-                String sælgFelt = gui.getUserSelection("Hvilken grund vil du sælge", felter.toArray(new String[0]));
+
+            }
+            if (!cantSell) {
+                String sælgFelt = gui.getUserSelection("Hvilken grund vil du sælge", felter.toArray(new String[felter.size()]));
                 System.out.println(sælgFelt);
                 sellField(array1[felter.indexOf(sælgFelt)], id);
+                //System.out.println(felter.get(0));
             }
-            //System.out.println(felter.get(0));
         }
         player[id].setBalance(player[id].getBalance()+leje);
         if(player[id].getBalance() < 0) {
@@ -157,6 +163,7 @@ public class MonopolyGUI {
         if (position != 0) {
             GUI_Ownable felt = (GUI_Ownable) gui.getFields()[position];
             felt.setOwnerName(null);
+            felt.setBorder(null);
             bræt.felter[position].setOwner(5);
         }
         System.out.println("Spiller ejer ikke noget");
