@@ -27,7 +27,8 @@ public class Player {
     }
     public void setActive(){
         this.active = false;
-
+        this.owned = new int[0];
+        this.x = 0;
     }
     public boolean getActive(){return active;}
     public boolean getJailed(){

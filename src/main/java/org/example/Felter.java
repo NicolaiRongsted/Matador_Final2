@@ -32,7 +32,6 @@ public class Felter {
     public int getRent(){
         return leje[houses];
     }
-
     public void setHouses(int amount){
         houses = amount;
     }
