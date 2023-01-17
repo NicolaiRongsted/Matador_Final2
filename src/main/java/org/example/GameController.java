@@ -219,7 +219,9 @@ public class GameController {
                         if(buildhouse){
                             game.Updatebalance(array.length*houseprice, PlayerID);
                             for (int i = 0; i < array.length; i++){
-                                bræt.felter[array[i]].setHouses(bræt.felter[array[i]].getHouses()+1);
+                                if(bræt.felter[array[i]].getHouses() < 5){
+                                    bræt.felter[array[i]].setHouses(bræt.felter[array[i]].getHouses()+1);
+                                }
                             }
                         }
                     }
