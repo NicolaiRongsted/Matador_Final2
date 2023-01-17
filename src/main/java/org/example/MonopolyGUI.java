@@ -111,6 +111,9 @@ public class MonopolyGUI {
             players[ID].setPosition(players[ID].getPosition() % 40);
             Updatebalance(4000, ID);
         }
+        else if (players[ID].getPosition() < 0){
+            players[ID].setPosition(40 - players[ID].getPosition());
+        }
         GUI_Field field = gui.getFields()[players[ID].getPosition()];
         player[ID].getCar().setPosition(field);
     }
